@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ $1 == 'u' ]; then
-	sudo rm /usr/local/bin/autosquash
-	suod rm /use/local/bin/SquashEditor
-	exit
+if [ "$1" = "u" ]; then
+ sudo rm /usr/local/bin/autosquash
+ sudo rm /usr/local/bin/SquashEditor
+ exit
 fi
 sudo cp ./autosquash /usr/local/bin
-suod cp ./SquashEditor /usr/local/bin
+sudo cp ./SquashEditor /usr/local/bin
