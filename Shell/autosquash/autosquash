@@ -1,0 +1,7 @@
+#!/bin/bash
+oeditor=`git config --global core.editor`
+lcount=`git log --pretty=format:"%h" | grep -c ^`
+lcount=`expr $lcount-1`;
+git config --global core.editor "SquashEditor"
+git rebase -i HEAD~$lcount
+git config --global core.editor $oeditor
