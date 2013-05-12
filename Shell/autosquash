@@ -1,0 +1,16 @@
+#!/bin/bash
+tf=$1
+echo $tf
+tmpf=$tf-tmp
+action=${tf##*/} 
+cp $tf $tmpf 
+echo $tmpf
+case $action in
+git-rebase-todo)
+ cat $tmpf | awk 'FNR==1{print;next;} /^.*cny\:ig.*$/{sub(/^pick/,"s"); print;next;}{print;}' >$tf
+ cp $tf /tmp
+;;
+COMMIT_EDITMSG)
+ cat $tmpf | awk '/^$/{next} /^\#.*/{next} {print}' | awk 'FNR==1{print}' >$tf
+;;
+esac
