@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$1" = "u" ]; then
+ sudo rm /usr/local/bin/sync2github
+ sudo rm /usr/local/bin/inits2github
+ exit
+fi
+sudo cp ./sync2github /usr/local/bin
+sudo cp ./inits2github /usr/local/bin

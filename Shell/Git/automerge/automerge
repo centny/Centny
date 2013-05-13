@@ -1,0 +1,18 @@
+#!/bin/bash
+git fetch automerge
+git merge automerge/master
+case $? in
+1)
+ ms=`git diff --name-only --diff-filter=U`
+ for i in $ms 
+ do
+  git add $i
+ done
+ git commit -a -m "auto merge"
+ git push
+;;
+128)
+ git commit -a -m "auto merge"
+ git push
+;;
+esac

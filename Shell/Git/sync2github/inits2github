@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ -d "./local" ]; then
+ rm -rf ./local
+fi
+if [ -d "./github" ]; then
+ rm -rf ./github
+fi
+git clone $1 local
+git clone $2 github
+cd local
+initamerge ../github
+cd ../
+cd github
+val=`git remote -v | grep "local*" | grep -c ^`
+if [ ! "$val" = "0" ]; then
+ git remote remove local
+fi
+git remote add local ../local
+

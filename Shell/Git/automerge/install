@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$1" = "u" ]; then
+ sudo rm /usr/local/bin/automerge
+ sudo rm /usr/local/bin/initamerge
+ exit
+fi
+sudo cp ./automerge /usr/local/bin
+sudo cp ./initamerge /usr/local/bin

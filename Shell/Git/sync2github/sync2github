@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ ! -f local ];then
+ echo "local folder not exist"
+ exit
+fi
+if [ ! -f github ];then
+ echo "github folder not exit"
+ exit
+fi
+cd local
+git pull
+cd ../github
+git pull
+#merge github to local
+cd ../local
+automerge
+#merge local to github
+cd ../github
+git fetch local
+git merge local/master
+
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" = "" ]; then
+ echo "Usage:initamerge <remote addr>"
+ exit
+fi
+val=`git remote -v | grep "automerge*" | grep -c ^`
+if [ ! "$val" = "0" ]; then
+ git remote remove automerge
+fi
+git remote add automerge $1
+
