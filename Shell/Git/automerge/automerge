@@ -11,6 +11,10 @@ case $? in
  git commit -a -m "auto merge"
  git push
 ;;
+0)
+ git commit -a -m "auto merge"
+ git push
+;;
 128)
  git commit -a -m "auto merge"
  git push

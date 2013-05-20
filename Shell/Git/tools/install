@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" = "u" ]; then
+ sudo rm /usr/local/bin/isconflict
+ exit
+fi
+sudo cp ./isconflict /usr/local/bin
