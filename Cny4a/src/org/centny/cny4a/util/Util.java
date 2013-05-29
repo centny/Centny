@@ -5,8 +5,8 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
@@ -24,21 +24,21 @@ public class Util {
 	 * check the order:WIFI,Mobile,or null.
 	 * 
 	 * @param aty
-	 *            the activity for android.
+	 *            the ContextWrapper for android.
 	 * @return IP.
 	 */
-	public static String localIpAddress(Activity aty) {
+	public static String localIpAddress(ContextWrapper aty) {
 		return localIpAddress(aty, false);
 	}
 
 	/**
 	 * @param aty
-	 *            the activity for android.
+	 *            the ContextWrapper for android.
 	 * @param onlyWifi
 	 *            only check wifi.
 	 * @return IP.
 	 */
-	public static String localIpAddress(Activity aty, boolean onlyWifi) {
+	public static String localIpAddress(ContextWrapper aty, boolean onlyWifi) {
 		try {
 			WifiManager wifi;
 			wifi = (WifiManager) aty.getSystemService(Context.WIFI_SERVICE);
