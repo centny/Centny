@@ -84,14 +84,14 @@ sublimegdb_workingdir //suggest it is added to every project
 
 ##Go Project Configure
 
-1. create the project dir and source foilder
+1. create the project dir and source folder
 
 	```
 mkdir ~/TGoPrj
 mkdir ~/TGoPrj/src
 	```
 2. open ST2 and select Project>Save Project As..,save the project file to ~/TGoPrj
-3. select Project->Edit Project, add configure like blew:
+3. select Project->Edit Project, add configure like below:
 
 
 	```
