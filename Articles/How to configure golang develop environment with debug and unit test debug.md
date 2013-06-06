@@ -1,0 +1,205 @@
+#How to configure golang develop environment with debug and unit test debug
+====
+
+##Prepare Envrionment
+- gdb	 require 7.1+
+- golang complier
+- Sublime Text 2(ST2)
+
+##Install GDB
+if you aleady installed,skipping this step.
+
+1. download gdb-*.tar.gz for gnu
+2. install by below script:
+
+	```
+	tar -zxvf gdb-*.tar.gz
+	cd gdb-*
+	export GOC_FOR_TARGET=<go complier path>
+	./configure --prefix=/usr/bin
+	make
+	make install
+	```
+3. if your system is osx,the gdb must be code signed. see *Building GDB for Darwin* 
+
+
+##Install ST2 Plugin
+
+1. install Package Control:
+
+	copy below script to ST2 console and run,then restart the ST2
+
+	```
+import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
+	```
+2. install *gocode* and *MarGo*
+
+	*note:*the GOPATH must be added to environment.
+
+	```
+go get github.com/nsf/gocode
+go get github.com/DisposaBoy/MarGo
+	```
+3. install *GoSublim、SidebarEnhancements、GoGdb* by Package Control
+	* *super+shift+p* > typing pcip,select Package Control:Install Package
+	* type *GoSublim* for install
+	* do the sample step for *SidebarEnhancements、GoGdb*
+	 
+	.
+	 
+	if GoGdb is not found in Package Control,install GoGdb manual
+	
+	
+	OSX:
+	
+	```
+cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/
+git clone https://github.com/Centny/GoGdb
+
+	```
+	
+	Linux:
+	
+	```
+cd ~/.config/sublime-text-2/Packages
+git clone https://github.com/Centny/GoGdb
+
+	```
+
+##Configure Plugin
+
+*note*:the GOPATH must be added to environment.
+
+1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-Default,then add *"GOPATH":"${GS_GOPATH}:${GOPATH}"* to env.
+2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add *"sublimegdb_go_cmd":"/usr/local/go/bin/go"*
+
+	support configure:
+	
+	```
+sublimegdb_go_cmd
+sublimegdb_commandline //suggest it is added every project
+sublimegdb_workingdir //suggest it is added to every project
+	```
+
+
+##Go Project Configure
+
+1. create the project dir and source foilder
+
+	```
+mkdir ~/TGoPrj
+mkdir ~/TGoPrj/src
+	```
+2. open ST2 and select Project>Save Project As..,save the project file to ~/TGoPrj
+3. select Project->Edit Project, add configure like blew:
+
+
+	```
+{
+	//it can be added by selecting Project>Add Folder to Project.
+	"folders":
+	[
+		{
+			"path": "src"
+		}
+	],
+	"settings":
+	{
+		"name": "TGoPrj",
+		"sublimegdb_commandline": "gdb --interpreter=mi --args ${binp} ${args}",
+		"sublimegdb_workingdir": "${ppath}",
+		"sublimegdb_go_project": true
+	}
+	//support values:
+	//${ppath} the project full path.
+	//${binp} the executable file full path.
+	//${args} running arguments.
+	//${pkgp} the package path for go build or install.
+	//${args} the package path for go build or install.
+}
+	```
+4. all setting is completed.adding sample code for usage.
+5. create folders under src *src/centny/tcode* and *src/centny/main*
+6. new *main.go* file to *src/centny/main* and add code:
+
+
+	```
+	package main
+
+	import (
+		"fmt"
+	)
+
+	func main() {
+		fmt.Println("Hello World!")
+	}	
+	```
+7. press super+shift+r to run or f5 to debug.
+8. new *tcode.go* file to *src/centny/tcode* and add code:
+
+
+	```
+	package tcode
+
+	import (
+		"fmt"
+	)
+
+	func ShowTCode() {
+		fmt.Println("Hello TCode!")
+	}		
+	```
+9. new *tcode_test.go* file to *src/centny/tcode* and add code:
+
+
+	```
+	package tcode
+
+	import (
+		"testing"
+	)
+
+	func TestShowTCode(t testing.T) {
+		ShowTCode()
+	}
+	```
+10. press super+shift+r to run test
+11. if run test not error,super+shift+p to show *Goto Anything*,typing ggdt,select *GoGdb: Debug Test*,then select *TestShowTCode* to debug test.
+
+
+
+##Building GDB for Darwin
+- Giving gdb permission to control other processes
+If you try to use your freshly built gdb, you will get an error message such as:
+
+	Starting program: /x/y/foo
+Unable to find Mach task port for process-id 28885: (os/kern) failure (0x5).(please check gdb is codesigned - see taskgated(8))This is because the Darwin kernel will refuse to allow gdb to debug another process if you don't have special rights, since debugging a process means having full control over that process, and that isn't allowed by default since it would be exploitable by malware. (The kernel won't refuse if you are root, but of course you don't want to be root to debug.)
+
+	The most up to date method to allow gdb to control another process is to sign it with any system-trusted code signing authority. This is an easy process once you have a certificate (see the section below). If the certificate is known as gdb-cert, just use:
+
+
+- $ codesign -s gdb-cert gdb
+
+	Old notes: In Tiger, the kernel would accept processes whose primary effective group is procmod or procview.  That means that making gdb setgid procmod should work. Later versions of Darwin should accept this convention provided that taskgated (the daemon that control the access) is invoked with option '-p'. This daemon is configured by /System/Library/LaunchDaemons/com.apple.taskgated.plist. I was able to use this rule provided that I am also a member of the procmod group.
+
+
+- Creating a certificate
+	
+	Start Keychain Access application (/Applications/Utilities/Keychain Access.app)
+	
+	Open menu /Keychain Access/Certificate Assistant/Create a Certificate...
+	
+	Choose a name (gdb-cert in the example), set Identity Type to Self Signed Root, set Certificate Type to Code Signing and select the Let me override defaults. Click several times on Continue until you get to the Specify a Location For The Certificate screen, then set Keychain to System.
+	
+	If you can't store the certificate in the System keychain, create it in the login keychain, then exported it. You can then imported it into the System keychain.
+	
+	Finally, using the contextual menu for the certificate, select Get Info, open the Trust item, and set Code Signing to Always Trust.
+	
+	You must quit Keychain Access application in order to use the certificate (so before using gdb).
+
+
+
+
+
+
+
