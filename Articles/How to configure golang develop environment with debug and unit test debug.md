@@ -13,12 +13,12 @@ if you aleady installed,skipping this step.
 2. install by below script:
 
 	```
-	tar -zxvf gdb-*.tar.gz
-	cd gdb-*
-	export GOC_FOR_TARGET=<go complier path>
-	./configure --prefix=/usr/bin
-	make
-	make install
+tar -zxvf gdb-*.tar.gz
+cd gdb-*
+export GOC_FOR_TARGET=<go complier path>
+./configure --prefix=/usr/bin
+make
+make install
 	```
 3. if your system is osx,the gdb must be code signed. see *Building GDB for Darwin* 
 
