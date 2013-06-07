@@ -290,8 +290,48 @@ func httpServer() {
 	http.ListenAndServe("localhost:4000", h)
 }
 
+//go
+func say(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
+	}
+}
+
+func gosay() {
+	go say("world")
+	say("hello")
+}
+
+//channel
+func sum(a []int, c chan int) {
+	sum := 0
+	for _, v := range a {
+		sum += v
+		c <- sum // send sum to c
+		time.Sleep(100 * time.Millisecond)
+	}
+	close(c)
+}
+func tchannel() {
+	a := []int{1, 2, 3, 4, 5, 6}
+	c := make(chan int)
+	go sum(a, c)
+	for v := range c {
+		fmt.Println("v:", v)
+	}
+	//Channels can be buffered. Provide the buffer length as the second
+	//argument to make to initialize a buffered channel:
+	//ch := make(chan int, 100)
+	//Sends to a buffered channel block only when the buffer is full.
+	//Receives block when the buffer is empty.
+}
 func main() {
-	httpServer()
+	tchannel()
+	//
+	// gosay()
+	//
+	// httpServer()
 	//
 	// terror()
 	//

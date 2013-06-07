@@ -34,7 +34,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 	```
 2. install *gocode* and *MarGo*
 
-	*note:the GOPATH must be added to sehll environment.*
+	*note:the GOPATH must be added to sehll environment.see Add Environment for command*
 	
 	```
 go get github.com/nsf/gocode
@@ -173,14 +173,24 @@ mkdir ~/TGoPrj/src
 11. if run test not error,super+shift+p to show *Goto Anything*,typing ggdt,select *GoGdb: Debug Test*,then select *TestShowTCode* to debug test.
 
 
-##Add Environment for launch on Darwin
-- vim /etc/launchd.conf //if not found,creat it and make it executable.
-- add commmand setenv or export like:
+##Add Environment for command
+- vim /etc/profile //if not found,creat it and make it executable.
+- add environmen value:
 
 	```
-setenv GOPATH $HOME/go
-setenv PATH="$PATH:$GOPATH/bin"
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
 	```
+
+
+##Add Environment for launch on Darwin
+- open ~/.MacOSX/environment.plist //if not found,creat it manuale.
+- add row for GOPATH:
+
+	```
+GOPATH <abstract full path> eg:/Users/<username>/go
+	```
+
 
 ##Building GDB for Darwin
 **copy** from <http://sourceware.org/gdb/wiki/BuildingOnDarwin>
