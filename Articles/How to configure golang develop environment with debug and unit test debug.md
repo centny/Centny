@@ -34,8 +34,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 	```
 2. install *gocode* and *MarGo*
 
-	*note:the GOPATH must be added to environment.(on osx,see Add Environment for launch on Darwin)*
-
+	*note:the GOPATH must be added to sehll environment.*
 	```
 go get github.com/nsf/gocode
 go get github.com/DisposaBoy/MarGo
@@ -68,7 +67,7 @@ git clone https://github.com/Centny/GoGdb
 
 ##Configure Plugin
 
-*note:the GOPATH must be added to environment.*
+*note:the GOPATH must be added to environment.(on osx,see Add Environment for launch on Darwin)*
 
 1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-Default,then add *"GOPATH":"${GS_GOPATH}:${GOPATH}"* to env.
 2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add *"sublimegdb_go_cmd":"/usr/local/go/bin/go"*
