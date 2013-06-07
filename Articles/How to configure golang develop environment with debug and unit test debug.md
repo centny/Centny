@@ -35,6 +35,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 2. install *gocode* and *MarGo*
 
 	*note:the GOPATH must be added to sehll environment.*
+	
 	```
 go get github.com/nsf/gocode
 go get github.com/DisposaBoy/MarGo
@@ -167,11 +168,11 @@ mkdir ~/TGoPrj/src
 
 
 ##Add Environment for launch on Darwin
-- vim /etc/launchd.conf
+- vim /etc/launchd.conf //if not found,creat it and make it executable.
 - add commmand setenv or export like:
 
 	```
-setenv GOPATH $(HOME)/go
+setenv GOPATH $HOME/go
 export PATH="$PATH:$GOPATH/bin"
 	```
 
