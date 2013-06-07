@@ -75,11 +75,17 @@ git clone https://github.com/Centny/GoGdb
 
 	support configure:
 	
-	```
-sublimegdb_go_cmd
-sublimegdb_commandline //suggest it is added every project
-sublimegdb_workingdir //suggest it is added to every project
-	```
+	- sublimegdb_go_cmd	:
+	
+		the go executable command full path.
+	
+	- sublimegdb_commandline:
+	
+		the debug command line,such as *gdb --interpreter=mi --args ${binp} ${args}*. suggest it is added every project,see *Go project configure*
+	
+	- sublimegdb_workingdir:
+	
+		the gdb debug working directory.suggest it is added to every project,see *Go project configure*
 
 
 ##Go Project Configure
@@ -113,12 +119,12 @@ mkdir ~/TGoPrj/src
 	//support values:
 	//${ppath} the project full path.
 	//${binp} the executable file full path.
-	//${args} running arguments.
+	//${args} running extend arguments.
 	//${pkgp} the package path for go build or install.
 	//${args} the package path for go build or install.
 }
 	```
-4. all setting is completed.adding sample code for usage.
+4. all setting is completed. adding sample code for usage.
 5. create folders under src *src/centny/tcode* and *src/centny/main*
 6. new *main.go* file to *src/centny/main* and add code:
 
@@ -173,25 +179,11 @@ mkdir ~/TGoPrj/src
 
 	```
 setenv GOPATH $HOME/go
-export PATH="$PATH:$GOPATH/bin"
+setenv PATH="$PATH:$GOPATH/bin"
 	```
 
 ##Building GDB for Darwin
 **copy** from <http://sourceware.org/gdb/wiki/BuildingOnDarwin>
-
-- Giving gdb permission to control other processes
-If you try to use your freshly built gdb, you will get an error message such as:
-
-	Starting program: /x/y/foo
-Unable to find Mach task port for process-id 28885: (os/kern) failure (0x5).(please check gdb is codesigned - see taskgated(8))This is because the Darwin kernel will refuse to allow gdb to debug another process if you don't have special rights, since debugging a process means having full control over that process, and that isn't allowed by default since it would be exploitable by malware. (The kernel won't refuse if you are root, but of course you don't want to be root to debug.)
-
-	The most up to date method to allow gdb to control another process is to sign it with any system-trusted code signing authority. This is an easy process once you have a certificate (see the section below). If the certificate is known as gdb-cert, just use:
-
-
-- $ codesign -s gdb-cert gdb
-
-	Old notes: In Tiger, the kernel would accept processes whose primary effective group is procmod or procview.  That means that making gdb setgid procmod should work. Later versions of Darwin should accept this convention provided that taskgated (the daemon that control the access) is invoked with option '-p'. This daemon is configured by /System/Library/LaunchDaemons/com.apple.taskgated.plist. I was able to use this rule provided that I am also a member of the procmod group.
-
 
 - Creating a certificate
 	
@@ -206,6 +198,20 @@ Unable to find Mach task port for process-id 28885: (os/kern) failure (0x5).(ple
 	Finally, using the contextual menu for the certificate, select Get Info, open the Trust item, and set Code Signing to Always Trust.
 	
 	You must quit Keychain Access application in order to use the certificate (so before using gdb).
+	
+- $ codesign -s gdb-cert gdb
+
+	Old notes: In Tiger, the kernel would accept processes whose primary effective group is procmod or procview.  That means that making gdb setgid procmod should work. Later versions of Darwin should accept this convention provided that taskgated (the daemon that control the access) is invoked with option '-p'. This daemon is configured by /System/Library/LaunchDaemons/com.apple.taskgated.plist. I was able to use this rule provided that I am also a member of the procmod group.
+	
+- if gdb have not signed success,you will receive below erro message:
+
+	Starting program: /x/y/foo
+Unable to find Mach task port for process-id 28885: (os/kern) failure (0x5).(please check gdb is codesigned - see taskgated(8))This is because the Darwin kernel will refuse to allow gdb to debug another process if you don't have special rights, since debugging a process means having full control over that process, and that isn't allowed by default since it would be exploitable by malware. (The kernel won't refuse if you are root, but of course you don't want to be root to debug.)
+
+
+
+
+
 
 
 
