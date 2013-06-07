@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": "src"
+		}
+	],
+	 "settings":
+ 	{
+	     "name": "Cny4go",
+	     "sublimegdb_commandline": "gdb --interpreter=mi --args ${binp} ${args}",
+	     "sublimegdb_workingdir": "${ppath}",
+	     "sublimegdb_go_project": true
+ 	}
+}

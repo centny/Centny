@@ -3,7 +3,7 @@
 
 ##Prepare Envrionment
 - gdb	 require 7.1+
-- golang complier
+- golang compiler
 - Sublime Text 2(ST2)
 
 ##Install GDB
@@ -15,10 +15,10 @@ if you aleady installed,skipping this step.
 	```
 tar -zxvf gdb-*.tar.gz
 cd gdb-*
-export GOC_FOR_TARGET=<go complier path>
-./configure --prefix=/usr/bin
-make
-make install
+export GOC_FOR_TARGET=<go compiler path,like:/usr/local/go>
+./configure --prefix=/usr
+make -j8
+sudo make install
 	```
 3. if your system is osx,the gdb must be code signed. see *Building GDB for Darwin* 
 
@@ -27,14 +27,14 @@ make install
 
 1. install Package Control:
 
-	copy below script to ST2 console and run,then restart the ST2(ctrl+` to open ST2 console)
+	copy below script to ST2 console and run,then restart the ST2(ctrl+` to open ST2 console，or View>Show Console)
 
 	```
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
 	```
 2. install *gocode* and *MarGo*
 
-	*note:the GOPATH must be added to environment.*
+	*note:the GOPATH must be added to environment.(on osx,see Add Environment for launch on Darwin)*
 
 	```
 go get github.com/nsf/gocode
@@ -167,8 +167,18 @@ mkdir ~/TGoPrj/src
 11. if run test not error,super+shift+p to show *Goto Anything*,typing ggdt,select *GoGdb: Debug Test*,then select *TestShowTCode* to debug test.
 
 
+##Add Environment for launch on Darwin
+- vim /etc/launchd.conf
+- add commmand setenv or export like:
+
+	```
+setenv GOPATH $(HOME)/go
+export PATH="$PATH:$GOPATH/bin"
+	```
 
 ##Building GDB for Darwin
+**copy** from <http://sourceware.org/gdb/wiki/BuildingOnDarwin>
+
 - Giving gdb permission to control other processes
 If you try to use your freshly built gdb, you will get an error message such as:
 
