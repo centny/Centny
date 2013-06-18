@@ -327,11 +327,11 @@ func tchannel() {
 	//Receives block when the buffer is empty.
 }
 func main() {
-	tchannel()
+	// tchannel()
 	//
 	// gosay()
 	//
-	// httpServer()
+	httpServer()
 	//
 	// terror()
 	//
