@@ -27,7 +27,7 @@ sudo make install
 
 1. install Package Control:
 
-	copy below script to ST2 console and run,then restart the ST2(ctrl+` to open ST2 console，or View>Show Console)
+	copy below script to ST2 console and run,then restart the ST2(*ctrl+`* to open ST2 console，or View>Show Console)
 
 	```
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
@@ -78,6 +78,9 @@ git clone https://github.com/Centny/GoGdb
 	- sublimegdb_go_cmd	:
 	
 		the go executable command full path.
+	- sublimegdb_rags:
+	
+		the run extend argument for command.suggest it is added every project,see *Go project configure*
 	
 	- sublimegdb_commandline:
 	
@@ -112,6 +115,7 @@ mkdir ~/TGoPrj/src
 	"settings":
 	{
 		"name": "TGoPrj",
+		"sublimegdb_rargs":"",
 		"sublimegdb_commandline": "gdb --interpreter=mi --args ${binp} ${args}",
 		"sublimegdb_workingdir": "${ppath}",
 		"sublimegdb_go_project": true
@@ -140,7 +144,7 @@ mkdir ~/TGoPrj/src
 		fmt.Println("Hello World!")
 	}	
 	```
-7. press super+shift+r to run or f5 to debug.
+7. press *super+shift+r* to run or *f5* to debug.
 8. new *tcode.go* file to *src/centny/tcode* and add code:
 
 
@@ -169,8 +173,9 @@ mkdir ~/TGoPrj/src
 		ShowTCode()
 	}
 	```
-10. press super+shift+r to run test
-11. if run test not error,super+shift+p to show *Goto Anything*,typing ggdt,select *GoGdb: Debug Test*,then select *TestShowTCode* to debug test.
+10. press *super+shift+r* to run test
+11. if run test not error,*super+shift+p* to show *Goto Anything*,typing ggdt,select *GoGdb: Debug Test(or super+shift+o)*,then select *TestShowTCode* to debug test.
+12. press *super+shift+k* to kill the process.
 
 
 ##Add Environment for command
@@ -190,7 +195,13 @@ export PATH="$PATH:$GOPATH/bin"
 	```
 GOPATH <abstract full path> eg:/Users/<username>/go
 	```
-
+for 10.7 or later:
+ add below to /etc/launchd.conf
+ 
+	```
+setenv GOPATH <abstract full path> eg:/Users/<username>/go
+	```
+note:setting launch environment is different in different osx version,see detail in www.apple.com
 
 ##Building GDB for Darwin
 **copy** from <http://sourceware.org/gdb/wiki/BuildingOnDarwin>
