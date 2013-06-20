@@ -327,16 +327,15 @@ func tchannel() {
 	//Receives block when the buffer is empty.
 }
 func main() {
-	// tchannel()
+	tchannel()
 	//
 	// gosay()
 	//
-	httpServer()
+	// httpServer()
 	//
 	// terror()
 	//
-	// tinterface()
-	//
+	// tinterface·	//
 	// var mf MyFloat = 100
 	// fmt.Println(mf.Abs())
 	// mf.x2()

@@ -14,3 +14,7 @@ func ShowLog() {
 		fmt.Println("idx:", i)
 	}
 }
+
+func ShowSome() {
+	fmt.Println("calling show some...")
+}
