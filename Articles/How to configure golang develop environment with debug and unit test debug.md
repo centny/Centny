@@ -71,24 +71,24 @@ git clone https://github.com/Centny/GoGdb
 *note:the GOPATH must be added to environment.(on osx,see Add Environment for launch on Darwin)*
 
 1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-Default,then add *"GOPATH":"${GS_GOPATH}:${GOPATH}"* to env.
-2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add *"sublimegdb_go_cmd":"/usr/local/go/bin/go"*
+2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add *"go_cmd":"/usr/local/go/bin/go"*
 
 	support configure:
 	
-	- sublimegdb_go_cmd	:
+	- go_cmd	:
 	
-		the go executable command full path.
-	- sublimegdb_rags:
+		the go executable command full path.it can be configure by every prjoect,see *Go project configure:sublimegdb_go_cmd*
+	- rargs:
 	
-		the run extend argument for command.suggest it is added every project,see *Go project configure*
+		the run extend argument for command.suggest it is added every project,see *Go project configure:sublimegdb_rargs*
 	
-	- sublimegdb_commandline:
+	- commandline:
 	
-		the debug command line,such as *gdb --interpreter=mi --args ${binp} ${args}*. suggest it is added every project,see *Go project configure*
+		the debug command line,such as *gdb --interpreter=mi --args ${binp} ${args}*. suggest it is added every project,see *Go project configure:sublimegdb_commandline*
 	
-	- sublimegdb_workingdir:
+	- workingdir:
 	
-		the gdb debug working directory.suggest it is added to every project,see *Go project configure*
+		the gdb debug working directory.suggest it is added to every project,see *Go project configure:sublimegdb_workingdir*
 
 
 ##Go Project Configure
@@ -119,6 +119,7 @@ mkdir ~/TGoPrj/src
 		"sublimegdb_commandline": "gdb --interpreter=mi --args ${binp} ${args}",
 		"sublimegdb_workingdir": "${ppath}",
 		"sublimegdb_go_project": true
+		//Configure Plugin#2
 	}
 	//support values:
 	//${ppath} the project full path.
