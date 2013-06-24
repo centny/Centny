@@ -1,9 +1,13 @@
 #How to configure golang develop environment with debug and unit test debug
-====
+===
+<br/>
 
 ##Pre-Install Envrionment
+
 - gdb require 7.1+(for osx,see <a href="#install-gdb-for-darwin>">Install GDB for Darwin</a>)
+
 - golang compiler(download from <a href="https://code.google.com/p/go/downloads/list">Go</a>)
+
 - Sublime Text 2(ST2) (download from <a href="http://www.sublimetext.com/2">Sublime Text 2</a>)
 
 
