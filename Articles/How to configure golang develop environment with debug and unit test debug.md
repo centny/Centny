@@ -32,7 +32,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 2. Install *GoSublim、SidebarEnhancements、GoGdb* by Package Control
 	* *super+shift+p* > typing pcip,select Package Control:Install Package
 	* type *GoSublim* for install
-	* do the sample step for *SidebarEnhancements、GoGdb*
+	* do the same step for *SidebarEnhancements、GoGdb*
 	 
 	.	
 	 
