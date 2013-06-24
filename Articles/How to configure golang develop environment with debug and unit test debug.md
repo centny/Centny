@@ -4,7 +4,7 @@
 
 ##Pre-Install Envrionment
 
-- gdb require 7.1+(for osx,see <a href="#install-gdb-for-darwin>">Install GDB for Darwin</a>)
+- gdb require 7.1+(for osx,see <a href="#install-gdb-for-darwin">Install GDB for Darwin</a>)
 
 - golang compiler(download from <a href="https://code.google.com/p/go/downloads/list">Go</a>)
 
