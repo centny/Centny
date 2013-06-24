@@ -11,7 +11,7 @@ import (
 func TestM(t *testing.T) {
 	os.Setenv("NLS_LANG", "")
 
-	db, err := sql.Open("oci8", "scott/tiger")
+	db, err := sql.Open("oci8", "exgTraceUser/ex_JU2!7@qnear.com:21521/KDB")
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -8,22 +8,22 @@ import (
 
 func main() {
 	// fmt.Println("aaaa")
-	db, e := sql.Open("mysql", "root:sco@unix(/tmp/mysql.sock)/test")
+	db, e := sql.Open("mysql", "cny:123@unix(/tmp/mysql.sock)/cny")
 	if e != nil {
 		fmt.Println("open database error", e)
 		return
 	}
-	rows, err := db.Query("SELECT * FROM TNAME")
+	rows, err := db.Query("SELECT UID,NAME,INFO FROM T_USER")
 	if err != nil {
 		fmt.Println("query error", err)
 		return
 	}
 	for rows.Next() {
-		var aid, bid string
-		if err := rows.Scan(&aid, &bid); err != nil {
+		var uid, name, info string
+		if err := rows.Scan(&uid, &name, &info); err != nil {
 			fmt.Println("err:", err)
 		} else {
-			fmt.Printf("aid:%s,bid:%s\n", aid, bid)
+			fmt.Printf("uid:%s,name:%s,info:%s\n", uid, name, info)
 		}
 	}
 	db.Close()
