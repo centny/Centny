@@ -33,7 +33,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 	* *super+shift+p* open the Goto Anything.
 	* input *pcip*
 	* select Package Control:Install Package
-	* input *GoSublim* for install
+	* input *GoSublime* for install
 	* do the same step for *SidebarEnhancements、GoGdb*
 	 
 	.	
