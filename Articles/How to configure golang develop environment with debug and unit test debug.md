@@ -1,51 +1,36 @@
 #How to configure golang develop environment with debug and unit test debug
 ====
 
-##Prepare Envrionment
-- gdb	 require 7.1+
-- golang compiler
-- Sublime Text 2(ST2)
+##Pre-Install Envrionment
+- gdb require 7.1+(for osx,see <a href="#install-gdb-for-darwin>">Install GDB for Darwin</a>)
+- golang compiler(download from <a href="https://code.google.com/p/go/downloads/list">Go</a>)
+- Sublime Text 2(ST2) (download from <a href="http://www.sublimetext.com/2">Sublime Text 2</a>)
 
-##Install GDB
-if you aleady installed,skipping this step.
 
-1. download gdb-*.tar.gz for gnu
-2. install by below script:
-
-	```
-tar -zxvf gdb-*.tar.gz
-cd gdb-*
-export GOC_FOR_TARGET=<go compiler path,like:/usr/local/go>
-./configure --prefix=/usr
-make -j8
-sudo make install
-	```
-3. if your system is osx,the gdb must be code signed. see *Building GDB for Darwin* 
-
+##Install *gocode* and *MarGo*
+*note:the GOPATH must be added to shell environment.see:*<a href="#add-environment-for-command">Add Environment for command</a>
+	
+	
+```
+go get github.com/nsf/gocode
+go get github.com/DisposaBoy/MarGo
+```
 
 ##Install ST2 Plugin
 
-1. install Package Control:
+1. Install Package Control:
 
 	copy below script to ST2 console and run,then restart the ST2(*ctrl+`* to open ST2 console，or View>Show Console)
 
 	```
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
 	```
-2. install *gocode* and *MarGo*
-
-	*note:the GOPATH must be added to sehll environment.see Add Environment for command*
-	
-	```
-go get github.com/nsf/gocode
-go get github.com/DisposaBoy/MarGo
-	```
-3. install *GoSublim、SidebarEnhancements、GoGdb* by Package Control
+2. Install *GoSublim、SidebarEnhancements、GoGdb* by Package Control
 	* *super+shift+p* > typing pcip,select Package Control:Install Package
 	* type *GoSublim* for install
 	* do the sample step for *SidebarEnhancements、GoGdb*
 	 
-	.
+	.	
 	 
 	if GoGdb is not found in Package Control,install GoGdb manual
 	
@@ -68,7 +53,7 @@ git clone https://github.com/Centny/GoGdb
 
 ##Configure Plugin
 
-*note:the GOPATH must be added to environment.(on osx,see Add Environment for launch on Darwin)*
+*note:the GOPATH must be added to environment.(on osx,see <a href="#add-environment-for-launch">Add Environment for launch on Darwin</a>)*
 
 1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-Default,then add *"GOPATH":"${GS_GOPATH}:${GOPATH}"* to env.
 2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add *"go_cmd":"/usr/local/go/bin/go"*
@@ -179,6 +164,9 @@ mkdir ~/TGoPrj/src
 12. press *super+shift+k* to kill the process.
 
 
+
+
+<br/><br/><br/><br/><br/>
 ##Add Environment for command
 - vim /etc/profile //if not found,creat it and make it executable.
 - add environmen value:
@@ -187,8 +175,7 @@ mkdir ~/TGoPrj/src
 export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
 	```
-
-
+	
 ##Add Environment for launch on Darwin
 - open ~/.MacOSX/environment.plist //if not found,creat it manuale.
 - add row for GOPATH:
@@ -202,7 +189,26 @@ for 10.7 or later:
 	```
 setenv GOPATH <abstract full path> eg:/Users/<username>/go
 	```
-note:setting launch environment is different in different osx version,see detail in www.apple.com
+note:setting launch environment is different in different osx version,see detail in <http://www.apple.com>
+
+
+##Install GDB for Darwin
+if you aleady installed,skipping this step.
+
+1. download gdb-*.tar.gz for gnu
+2. install by below script:
+
+	```
+tar -zxvf gdb-*.tar.gz
+cd gdb-*
+export GOC_FOR_TARGET=<go compiler path,like:/usr/local/go>
+./configure --prefix=/usr
+make -j8
+sudo make install
+	```
+3. if your system is osx,the gdb must be code signed. see *<a href="building-gdb-for-darwin">Building GDB for Darwin</a>*
+
+
 
 ##Building GDB for Darwin
 **copy** from <http://sourceware.org/gdb/wiki/BuildingOnDarwin>
@@ -229,6 +235,8 @@ note:setting launch environment is different in different osx version,see detail
 
 	Starting program: /x/y/foo
 Unable to find Mach task port for process-id 28885: (os/kern) failure (0x5).(please check gdb is codesigned - see taskgated(8))This is because the Darwin kernel will refuse to allow gdb to debug another process if you don't have special rights, since debugging a process means having full control over that process, and that isn't allowed by default since it would be exploitable by malware. (The kernel won't refuse if you are root, but of course you don't want to be root to debug.)
+
+
 
 
 
