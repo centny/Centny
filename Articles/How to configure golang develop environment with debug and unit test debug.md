@@ -183,7 +183,7 @@ export PATH="$PATH:$GOPATH/bin"
 	```
 	
 ##Add Environment for launch on Darwin
-- open ~/.MacOSX/environment.plist //if not found,creat it manuale.
+- open ~/.MacOSX/environment.plist //if not found,creat it manual.
 - add row for GOPATH:
 
 	```
