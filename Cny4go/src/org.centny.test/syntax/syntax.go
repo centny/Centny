@@ -34,6 +34,10 @@ const (
 
 //go loop
 func goloop() {
+	array := [...]float64{7.0, 8.5, 9.1}
+	for idx, val := range array {
+		fmt.Printf("idx:%d,val:%s", idx, val)
+	}
 	for i := 0; i < 10; i++ {
 		fmt.Println("for:", i)
 	}
