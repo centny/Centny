@@ -30,8 +30,10 @@ go get github.com/DisposaBoy/MarGo
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
 	```
 2. Install *GoSublim、SidebarEnhancements、GoGdb* by Package Control
-	* *super+shift+p* > typing pcip,select Package Control:Install Package
-	* type *GoSublim* for install
+	* *super+shift+p* open the Goto Anything.
+	* input *pcip*
+	* select Package Control:Install Package
+	* input *GoSublim* for install
 	* do the same step for *SidebarEnhancements、GoGdb*
 	 
 	.	
