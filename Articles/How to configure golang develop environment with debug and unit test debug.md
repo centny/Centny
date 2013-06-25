@@ -233,8 +233,13 @@ sudo make install
 	
 	You must quit Keychain Access application in order to use the certificate (so before using gdb).
 	
-- $ codesign -s gdb-cert gdb
+- Codesign gdb
 
+ 	```
+ 	cd <gdb install directory,specified by ./configure --prefix=*,like:/usr/bin>
+ 	codesign -s gdb-cert gdb
+ 	
+	```
 	Old notes: In Tiger, the kernel would accept processes whose primary effective group is procmod or procview.  That means that making gdb setgid procmod should work. Later versions of Darwin should accept this convention provided that taskgated (the daemon that control the access) is invoked with option '-p'. This daemon is configured by /System/Library/LaunchDaemons/com.apple.taskgated.plist. I was able to use this rule provided that I am also a member of the procmod group.
 	
 - if gdb have not signed success,you will receive below erro message:
