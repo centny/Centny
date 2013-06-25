@@ -3,34 +3,29 @@ package main
 import (
 	"fmt"
 	"runtime"
-	"sync"
-	"time"
 )
 
-var mux sync.Mutex
-var vv string = "ssssss"
-
-//go
-func say(c chan int, s string) {
-	for i := 0; i < 5; i++ {
-		time.Sleep(time.Millisecond)
-		// mux.Lock()
-		fmt.Println(s, vv)
-		// mux.Unlock()
+func rtimes(c chan int, times int) {
+	fmt.Println("Started Testing: Should run", times, "times.")
+	var count int
+	for i := 0; i < times; i++ {
+		count++
 	}
+	fmt.Println("Finished:", times, " times")
 	c <- 1
 }
 
-func gosay() {
-	c1 := make(chan int)
-	c2 := make(chan int)
-	go say(c1, "Hello")
-	go say(c2, "world")
-	<-c1
-	<-c2
-
-}
 func main() {
 	runtime.GOMAXPROCS(4)
-	gosay()
+	const C_SIZE int = 3
+	var chs [C_SIZE]chan int
+	for i := 0; i < C_SIZE; i++ {
+		chs[i] = make(chan int)
+	}
+	for i := C_SIZE; i > 0; i-- {
+		go rtimes(chs[i-1], i*1000000000)
+	}
+	for i := 0; i < C_SIZE; i++ {
+		<-chs[i]
+	}
 }

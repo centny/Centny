@@ -6,7 +6,6 @@ import (
 )
 
 func rtimes(c chan int, times int) {
-	// sleep for a while to simulate time consumed by event
 	fmt.Println("Started Testing: Should run", times, "times.")
 	var count int
 	for i := 0; i < times; i++ {
@@ -18,14 +17,15 @@ func rtimes(c chan int, times int) {
 
 func main() {
 	runtime.GOMAXPROCS(4)
-	var chs [5]chan int
-	for i := 0; i < 5; i++ {
+	const C_SIZE int = 3
+	var chs [C_SIZE]chan int
+	for i := 0; i < C_SIZE; i++ {
 		chs[i] = make(chan int)
 	}
-	for i := 3; i > 0; i-- {
-		go rtimes(chs[i-1], i*10000000000)
+	for i := C_SIZE; i > 0; i-- {
+		go rtimes(chs[i-1], i*10000000)
 	}
-	for i := 0; i < 5; i++ {
+	for i := 0; i < C_SIZE; i++ {
 		<-chs[i]
 	}
 }
