@@ -3,6 +3,7 @@ package tcode
 import (
 	"fmt"
 	"os"
+	"sync"
 )
 
 func ShowPwd() {
@@ -17,4 +18,17 @@ func ShowLog() {
 
 func ShowSome() {
 	fmt.Println("calling show some...")
+}
+
+type TPoint struct {
+	X   int
+	Y   int
+	mux sync.Mutex
+}
+
+func (self *TPoint) SaySome(v string) {
+	for i := 0; i < 20; i++ {
+		self.
+		fmt.Println(v)
+	}
 }

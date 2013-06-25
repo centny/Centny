@@ -297,7 +297,8 @@ func httpServer() {
 //go
 func say(s string) {
 	for i := 0; i < 5; i++ {
-		time.Sleep(100 * time.Millisecond)
+		// time.Sleep(100 * time.Millisecond)
+		runtime.Gosched()
 		fmt.Println(s)
 	}
 }
@@ -305,6 +306,7 @@ func say(s string) {
 func gosay() {
 	go say("world")
 	say("hello")
+	time.Sleep(100 * time.Millisecond)
 }
 
 //channel
@@ -331,9 +333,9 @@ func tchannel() {
 	//Receives block when the buffer is empty.
 }
 func main() {
-	tchannel()
+	// tchannel()
 	//
-	// gosay()
+	gosay()
 	//
 	// httpServer()
 	//
