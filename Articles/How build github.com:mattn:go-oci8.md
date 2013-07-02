@@ -13,7 +13,7 @@
 	ln <instanclient path>/libnnz11.dylib /usr/lib/libnnz11.dylib
 	```
 - install **pkg-config** if not installed.
-- create **oci8.pc** file in **/usr/lib/pkgconfig** and add blew(or download example file <a href="https://raw.github.com/Centny/Centny/master/Resources/oci8.pc" >oci8.pc</a>):<br/>
+- create **oci8.pc** file in **/usr/lib/pkgconfig** and add below(or download example file <a href="https://raw.github.com/Centny/Centny/master/Resources/oci8.pc" >oci8.pc</a>):<br/>
 	**Note:**replace ```<instanclient path>``` to your **instanclient** path.
 
 
