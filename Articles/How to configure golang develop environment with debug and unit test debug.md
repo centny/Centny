@@ -61,7 +61,14 @@ git clone https://github.com/Centny/GoGdb
 
 **Note:**the **GOPATH** must be added to environment.(on osx,see <a href="#add-environment-for-launch">Add Environment for launch on Darwin</a>)
 
-1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-Default,then find the **"env":{…}** node and add **"GOPATH":"${GS_GOPATH}:${GOPATH}"**.
+1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-User,add below to root node:
+
+	```
+	"env"{
+		"GOPATH":"${GS_GOPATH}:${GOPATH}"
+	}
+	```
+	**Note:**also your can't add it to your project configure,see **GoSublime Document**.
 2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add **"go_cmd":"/usr/local/go/bin/go"**
 
 	support configure:
