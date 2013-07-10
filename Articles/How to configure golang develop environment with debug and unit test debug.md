@@ -12,7 +12,7 @@
 
 
 ##Install *gocode* and *MarGo*
-**Note:**the **GOPATH** must be added to shell environment (it must be abstract path,not use other environment like $HOME).see:<a href="#add-environment-for-command">Add Environment for command</a>
+**Note:**the **GOPATH** must be added to shell environment (it must be absolute path,not use other environment like $HOME).see:<a href="#add-environment-for-command">Add Environment for command</a>
 	
 	
 ```
@@ -59,7 +59,7 @@ git clone https://github.com/Centny/GoGdb
 
 ##Configure Plugin
 
-**Note:**the **GOPATH** must be added to environment (it must be abstract path,not use other environment like $HOME).(on osx,see <a href="#add-environment-for-launch">Add Environment for launch on Darwin</a>)
+**Note:**the **GOPATH** must be added to environment (it must be absolute path,not use other environment like $HOME).(on osx,see <a href="#add-environment-for-launch">Add Environment for launch on Darwin</a>)
 
 1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-User,add below to root node:
 
