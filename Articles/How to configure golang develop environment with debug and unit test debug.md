@@ -174,7 +174,7 @@ mkdir ~/TGoPrj/src
 	```
 10. press **super+shift+R** to run test
 11. press **super+shift+O** then select **TestShowTCode** to debug test.
-12. press **super+shift+K** to kill the process.
+12. press **super+shift+K** to kill run process,press **super+alt+K** to kill debug process,.
 
 
 
