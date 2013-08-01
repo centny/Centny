@@ -266,7 +266,18 @@ This is because the Darwin kernel will refuse to allow gdb to debug another proc
 
 
 
-
+<br/>
+##Frequently Question
+1. **Console view can't show chinese log:** change the python default encoding is UTF-8.
+	- check the python version ST2 used: open the ST2 console,type ```import sys;print sys.version;```
+	- creat ```sitecustomize.py``` file in ```<python library folder>/<python version>/site-packages```(like use python2.6 in OSX,target path is **/Library/Python/2.6/site-packages**),then add below code:
+	
+		```
+		import sys
+		sys.setdefaultencoding('utf-8')
+		```
+	
+	
 
 
 
