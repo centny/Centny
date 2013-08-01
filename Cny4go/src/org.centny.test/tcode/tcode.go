@@ -28,7 +28,12 @@ type TPoint struct {
 
 func (self *TPoint) SaySome(v string) {
 	for i := 0; i < 20; i++ {
-		self.
 		fmt.Println(v)
+	}
+}
+
+func ShowChinese() {
+	for i := 0; i < 10; i++ {
+		fmt.Println("这是中文")
 	}
 }

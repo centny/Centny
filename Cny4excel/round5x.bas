@@ -4,15 +4,16 @@ If mm < 0 Then
     rd5x = 0
     Exit Function
 End If
+X = Val(X)
 Dim rval, remain As Integer
 tval = X * 10 ^ (mm + 1)
-rval = Int(X * 10 ^ mm)
-remain = Int(tval) Mod 10
+rval = Fix(X * 10 ^ mm)
+remain = Fix(tval) Mod 10
 If remain = 5 Then
     Dim ary() As String
     ary = Split(tval, ".")
     Dim a, b As Integer
-    a = b = Int(tval)
+    a = b = Fix(tval)
     If UBound(ary) > 0 Then
         Dim c As Integer
         c = Len(ary(1))

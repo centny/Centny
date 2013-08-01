@@ -1,6 +1,7 @@
 package main
 
 import (
+	"C"
 	"fmt"
 	"runtime"
 )
@@ -17,6 +18,7 @@ func rtimes(c chan int, times int) {
 
 func main() {
 	runtime.GOMAXPROCS(4)
+	C.int = 10
 	const C_SIZE int = 3
 	var chs [C_SIZE]chan int
 	for i := 0; i < C_SIZE; i++ {
@@ -28,4 +30,5 @@ func main() {
 	for i := 0; i < C_SIZE; i++ {
 		<-chs[i]
 	}
+	sdfs
 }
