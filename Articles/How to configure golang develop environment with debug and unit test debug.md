@@ -144,7 +144,8 @@ mkdir ~/TGoPrj/src
 	}	
 	```
 7. press **super+shift+r** to run or **F5** to debug.
-8. new **tcode.go** file to **src/centny/tcode** and add code:
+8. press **super+shift+c** show the console view to build or run log.
+9. new **tcode.go** file to **src/centny/tcode** and add code:
 
 
 	```
@@ -158,7 +159,7 @@ mkdir ~/TGoPrj/src
 		fmt.Println("Hello TCode!")
 	}		
 	```
-9. new **tcode_test.go** file to **src/centny/tcode** and add code:
+10. new **tcode_test.go** file to **src/centny/tcode** and add code:
 
 
 	```
@@ -172,9 +173,9 @@ mkdir ~/TGoPrj/src
 		ShowTCode()
 	}
 	```
-10. press **super+shift+R** to run test
-11. press **super+shift+O** then select **TestShowTCode** to debug test.
-12. press **super+shift+K** to kill run process,press **super+alt+K** to kill debug process,.
+11. press **super+shift+R** to run test
+12. press **super+shift+O** then select **TestShowTCode** to debug test.
+13. press **super+shift+K** to kill run process,press **super+alt+K** to kill debug process,.
 
 
 
