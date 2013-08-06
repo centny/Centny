@@ -3,8 +3,10 @@ package org.centny.cny4a.test;
 import org.centny.cny4a.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -21,4 +23,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	public void onClkTFocus(View v) {
+		this.startActivity(new Intent(this, TestFocus.class));
+	}
 }

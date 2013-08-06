@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<!--全屏幕拉伸-->
+	<style name="layout_full">
+		<item name= "android:layout_width">fill_parent</item>
+		<item name= "android:layout_height">fill_parent</item>
+	</style>
+	
+	<!--固定自身大小-->
+	<style name="layout_wrap">
+		<item name= "android:layout_width">wrap_content</item>
+		<item name= "android:layout_height">wrap_content</item>
+	</style>
+	
+    <!-- 横向分布-->
+    <style name="layout_horizontal" parent="layout_full">
+    	<item name="android:layout_width">0px</item>
+    </style>
+    
+    <!-- 纵向分布-->
+    <style name="layout_vertical" parent="layout_full">
+    	<item name="android:layout_height">0dip</item>
+    </style>
+
+</resources>
