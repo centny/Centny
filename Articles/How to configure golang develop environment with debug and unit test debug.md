@@ -224,7 +224,7 @@ setenv GOPATH <abstract full path> eg:/Users/<username>/go
 
 **Note:** OSX system launch environment setting is different in every version,see detail in <http://www.apple.com>
 ###Install GDB On Windows
-1. download <a href="">gdb.exe</a> or <a href="">gdb64.exe</a>
+1. download <a href="https://github.com/Centny/Centny/blob/master/Raw/gdb.exe">gdb.exe</a> or <a href="https://github.com/Centny/Centny/blob/master/Raw/gdb64.exe">gdb64.exe</a>
 2. copy to PATH folder.
 
 ##Install GDB for Darwin
