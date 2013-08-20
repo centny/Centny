@@ -1,0 +1,18 @@
+#!/bin/bash
+INSTALL_DIR=$2
+cpath=`dirname ${0}`
+case $1 in
+-i)
+ cp $cpath/cc4i_cenv $INSTALL_DIR
+ cp $cpath/cc4i_install $INSTALL_DIR
+ cp $cpath/cc4i_mbuild_example $INSTALL_DIR
+ cp $cpath/cc4i_uenv $INSTALL_DIR
+;;
+-c)
+ cp $cpath/cc4i_mbuild_example `pwd`/cc4i_mbuild
+;;
+-h)
+ echo "using cc4i_install -i <path> for install"
+ echo "using cc4i_install -c for copy build file"
+;;
+esac

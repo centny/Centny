@@ -1,0 +1,17 @@
+#!/bin/bash
+unset DEVROOT
+unset SDKROOT
+unset PPREFIX
+unset CC
+unset LD
+unset CPP
+unset CXX
+unset AR
+unset AS
+unset NM
+unset CXXCPP
+unset LDFLAGS
+unset CFLAGS
+unset CXXFLAGS
+unset FLAGS_1
+unset FLAGS_2

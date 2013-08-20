@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"org.centny.test/tcode"
 	"runtime"
+	"time"
 )
 
 func rtimes(c chan int, times int) {
@@ -10,13 +12,16 @@ func rtimes(c chan int, times int) {
 	var count int
 	for i := 0; i < times; i++ {
 		count++
+		time.Sleep(time.Second)
 	}
 	fmt.Println("Finished:", times, " times")
 	c <- 1
 }
 
 func main() {
+
 	runtime.GOMAXPROCS(4)
+	tcode.ShowChinese()
 	const C_SIZE int = 3
 	var chs [C_SIZE]chan int
 	for i := 0; i < C_SIZE; i++ {
@@ -28,5 +33,12 @@ func main() {
 	for i := 0; i < C_SIZE; i++ {
 		<-chs[i]
 	}
-	dd
+}
+
+type TestInc interface {
+	showMsg()
+}
+
+func testList(inf TestInc) {
+
 }

@@ -1,0 +1,39 @@
+#iPhoneSimulator/iPhoneOS
+. cc4i_uenv
+if [ "$2" = "" ];then
+ export DRIVER_V=6.1
+else
+ export DRIVER_V=$2
+fi
+case $1 in
+armv6)
+export DRIVER_N=iPhoneOS
+;;
+armv7)
+export DRIVER_N=iPhoneOS
+;;
+armv7s)
+export DRIVER_N=iPhoneOS
+;;
+i386)
+export DRIVER_N=iPhoneSimulator
+;;
+esac
+export ARCH_V="-arch $1"
+export DEVROOT=/Applications/Xcode.app/Contents/Developer/Platforms/$DRIVER_N.platform/Developer
+export SDKROOT=$DEVROOT/SDKs/$DRIVER_N$DRIVER_V.sdk
+echo "DEVROOT:"$DEVROOT
+echo "SDKROOT:"$SDKROOT
+export PPREFIX=$PREFIX_DIR
+export CC=$DEVROOT/usr/bin/gcc
+export LD=$DEVROOT/usr/bin/ld
+export CPP=$DEVROOT/usr/bin/cpp
+export CXX=$DEVROOT/usr/bin/g++
+export AR=$DEVROOT/usr/bin/ar
+export AS=$DEVROOT/usr/bin/as
+export NM=$DEVROOT/usr/bin/nm
+export CXXCPP=$DEVROOT/usr/bin/cpp
+export RANLIB=$DEVROOT/usr/bin/ranlib
+export LDFLAGS="$ARCH_V -pipe -no-cpp-precomp -isysroot $SDKROOT -L$PPREFIX/lib"
+export CFLAGS="$ARCH_V -pipe -no-cpp-precomp -isysroot $SDKROOT -I$PPREFIX/include"
+export CXXFLAGS="$ARCH_V -pipe -no-cpp-precomp -isysroot $SDKROOT -I$PPREFIX/include/"

@@ -1,0 +1,51 @@
+#!/bin/bash
+if [ $# -lt 4 ];then
+ echo "Usage:cc4i_mbuild <instll path> <target arches> <target library for making universal>"
+ exit
+fi
+. cc4i_uenv
+#
+#export LIBRARY_PATH=
+#export C_INCLUDE_PATH=
+#export LDFLAGS=
+#export CPPFLAGS=
+#export CFLAGS=
+
+
+INSTALL_DIR=$1
+T_ARCHS=$2  #target arch like:armv6 armv7 armv7s i386
+T_ULIB=$3   #target library .a file for make universal file.
+
+
+################################################
+###################Make Code####################
+for arch in $T_ARCHS;do
+ echo "building arch $arch..."
+ . cc4i_cenv $arch
+ ARCH_DIR=$INSTALL_DIR/$arch
+ rm -rf $ARCH_DIR
+ mkdir $ARCH_DIR
+ make clean
+ #adding your code,like:
+ #./configure --prefix=$INSTALL_DIR/$arch
+done
+echo "build end..."
+################################################
+
+
+################################################
+#############Make Universal Code################
+T_ULIB_OUT=$INSTALL_DIR/universal
+if [ ! -d $T_ULIB_OUT ];then
+ mkdir $T_ULIB_OUT
+fi
+for lf in $T_ULIB;do
+ LIPO_ARGS=""
+ for arch in $T_ARCHS;do
+  LIPO_ARGS="$LIPO_ARGS -arch $arch $INSTALL_DIR/$arch/lib/$lf"
+ done
+ echo "LIPO ARGS:$LIPO_ARGS"
+ lipo $LIPO_ARGS -output $T_ULIB_OUT/$lf -create
+done
+echo "make universal end..."
+################################################
