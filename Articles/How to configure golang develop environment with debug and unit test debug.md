@@ -4,7 +4,7 @@
 
 ##Pre-Install Envrionment
 
-- **GDB require 7.1+** (for osx,see <a href="#install-gdb-for-darwin">Install GDB for Darwin</a>)
+- **GDB require 7.1+** (for osx,see <a href="#install-gdb-for-darwin">Install GDB for Darwin</a>/<a href="#install-gdb-on-windows">Install GDB on windows</a>)
 
 - **Golang compiler** (download from <a href="https://code.google.com/p/go/downloads/list">Go</a>)
 
@@ -17,7 +17,6 @@
 	
 ```
 go get github.com/nsf/gocode
-go get github.com/DisposaBoy/MarGo
 ```
 
 ##Install ST2 Plugin
@@ -63,13 +62,28 @@ git clone https://github.com/Centny/GoGdb
 
 1. Select Sublime Text 2 >Perference>Package Setting>GoSublime>Setting-User,add below to root node:
 
+	On Linux:
+
 	```
 	"env"{
 		"GOPATH":"${GS_GOPATH}:${GOPATH}"
 	}
 	```
-	**Note:**also your can't add it to your project configure,see **GoSublime Document**.
-2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default,then add **"go_cmd":"/usr/local/go/bin/go"**
+	On Windows:
+	
+	```
+	"env"{
+		"GOPATH":"${GS_GOPATH};${GOPATH}"
+	}
+	```
+	
+2. Select Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-User,then add below:
+	
+	```
+	{
+	  "go_cmd":"/usr/local/go/bin/go"
+	}
+	```
 
 	support configure:
 	
@@ -144,7 +158,7 @@ mkdir ~/TGoPrj/src
 	}	
 	```
 7. press **super+shift+r** to run or **F5** to debug.
-8. press **super+shift+c** show the console view to build or run log.
+8. press **super+9** show the console view to build or run log.
 9. new **tcode.go** file to **src/centny/tcode** and add code:
 
 
@@ -177,8 +191,7 @@ mkdir ~/TGoPrj/src
 12. press **super+shift+O** then select **TestShowTCode** to debug test.
 13. press **super+shift+K** to kill run process,press **super+alt+K** to kill debug process,.
 
-
-
+**Note:For the key bindings on windows,open Sublime Text 2 >Perference>Package Setting>GoGdb->Setting-Default**
 
 <br/><br/><br/><br/><br/>
 ##Add Environment for command
@@ -210,7 +223,9 @@ setenv GOPATH <abstract full path> eg:/Users/<username>/go
 	```
 
 **Note:** OSX system launch environment setting is different in every version,see detail in <http://www.apple.com>
-
+###Install GDB On Windows
+1. download <a href="">gdb.exe</a> or <a href="">gdb64.exe</a>
+2. copy to PATH folder.
 
 ##Install GDB for Darwin
 if you aleady installed,skipping this step.
