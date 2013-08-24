@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"time"
 )
 
 func main() {
@@ -13,17 +14,18 @@ func main() {
 		fmt.Println("open database error", e)
 		return
 	}
-	rows, err := db.Query("SELECT UID,NAME,INFO FROM T_USER")
+	rows, err := db.Query("SELECT TID,NAME,TTIME FROM TT")
 	if err != nil {
 		fmt.Println("query error", err)
 		return
 	}
 	for rows.Next() {
-		var uid, name, info string
-		if err := rows.Scan(&uid, &name, &info); err != nil {
+		var uid, name, ttime string
+		if err := rows.Scan(&uid, &name, &ttime); err != nil {
 			fmt.Println("err:", err)
 		} else {
-			fmt.Printf("uid:%s,name:%s,info:%s\n", uid, name, info)
+			t, err := time.Parse("2006-1-2 15:04:05", ttime)
+			fmt.Printf("uid:%s,name:%s,info:%s\n", uid, name, t, err)
 		}
 	}
 	db.Close()

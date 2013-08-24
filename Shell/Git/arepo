@@ -1,0 +1,32 @@
+#!/bin/bash
+if [ "$1" = "" ];then
+ echo "Usage:arepo <repository name>"
+ exit
+fi
+grepo=$1.git
+fpwd=`pwd -P`
+gpath=$fpwd/$grepo
+if [ -f "$gpath" ];then
+ echo "Repository aleady exist"
+ exit
+fi
+mkdir $gpath
+cd $gpath
+git --bare init
+git update-server-info
+if [ "$2" = "" ];then
+ echo "$1 Repository" > description
+else
+ echo $2 > description
+fi
+echo "[gitweb]
+	owner=Centny" >> config
+cd /tmp
+git clone $gpath
+cd /tmp/$1
+echo "$1 Repository">README.md
+git add README.md
+git commit -a -m "First Initial"
+git push -u origin master
+rm -rf /tmp/$1
+echo "Add $1 repository success"
