@@ -1,0 +1,32 @@
+{
+  "code": 200,
+  "msg": "",
+  "total": 12,
+  "list": [
+    {
+      "cid": 1,
+      "tb_cid": 1,
+      "tb_parent_cid": 1,
+      "tb_name": "分类3-1",
+      "tb_is_parent": 0,
+      "tb_status": "normal",
+      "tb_sort_order": "x"
+    }, {
+      "cid": 2,
+      "tb_cid": 21,
+      "tb_parent_cid": 1,
+      "tb_name": "分类3-2",
+      "tb_is_parent": 1,
+      "tb_status": "normal",
+      "tb_sort_order": "x"
+    }, {
+      "cid": 3,
+      "tb_cid": 3,
+      "tb_parent_cid": 1,
+      "tb_name": "分类3-3",
+      "tb_is_parent": 0,
+      "tb_status": "normal",
+      "tb_sort_order": "x"
+    }
+  ]
+}

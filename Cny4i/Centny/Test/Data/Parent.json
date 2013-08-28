@@ -1,0 +1,38 @@
+{
+  "code": 200,
+  "msg": "",
+  "total": 12,
+  "list": [
+    {
+        "tb_cid": 1,
+        "tb_parent_cid":0,
+        "tb_name": "分类1",
+        "tb_is_parent": 1
+    }, {
+        "tb_cid": 2,
+        "tb_parent_cid": 0,
+        "tb_name": "分类2",
+        "tb_is_parent": 0
+    }, {
+        "tb_cid": 3,
+        "tb_parent_cid": 0,
+        "tb_name": "分类3",
+        "tb_is_parent": 1
+    },{
+        "tb_cid": 4,
+        "tb_parent_cid":0,
+        "tb_name": "分类4",
+        "tb_is_parent": 1
+    }, {
+        "tb_cid": 5,
+        "tb_parent_cid": 0,
+        "tb_name": "分类5",
+        "tb_is_parent": 0
+    }, {
+        "tb_cid": 6,
+        "tb_parent_cid": 0,
+        "tb_name": "分类6",
+        "tb_is_parent": 1
+    }
+  ]
+}

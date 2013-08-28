@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "msg": "",
+  "total": 12,
+  "list": [
+    {
+      "cid": 1,
+      "tb_cid": 1,
+      "tb_parent_cid": 1,
+      "tb_name": "分类4-1",
+      "tb_is_parent": 0,
+      "tb_status": "normal",
+      "tb_sort_order": "x"
+    }, {
+      "cid": 2,
+      "tb_cid": 2,
+      "tb_parent_cid": 1,
+      "tb_name": "分类4-2",
+      "tb_is_parent": 0,
+      "tb_status": "normal",
+      "tb_sort_order": "x"
+    }
+  ]
+}

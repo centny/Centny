@@ -1,0 +1,63 @@
+var ajaxEventQuery=new Array();
+var queryRunning=0;
+var urlCurrentIdx=0;
+function queryExecute(){
+    if(ajaxEventQuery.length>0){
+        var one=ajaxEventQuery.shift();
+        window.document.location.href="ajaxhandler://"+one;
+        setTimeout(queryExecute,300);
+        queryRunning=1;
+    }else{
+        queryRunning=0;
+    }
+}
+function ajaxHandler(v){
+	ajaxEventQuery.push(v);
+    if(queryRunning<1){
+        queryExecute();
+    }
+}
+function createAjaxBackHandler(http){
+    if(http.status==200){
+        ajaxHandler("back/"+http.urlId+"/"+http.status+"?"+http.responseText);
+    }else{
+        ajaxHandler("back/"+http.urlId+"/"+http.status);
+    }
+}
+(function(open) {
+     XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
+         this.queryString="method="+method;
+         this.queryString+="&async="+(async?1:0);
+         this.url=url;
+         this.urlId=++urlCurrentIdx;
+         ajaxHandler("open/"+this.urlId+"/"+method+"/"+(async?1:0)+"?"+url);
+         open.call(this, method, url, async, user, pass);
+         if(async){
+            this.addEventListener('readystatechange', function() {
+                if(this.readyState==4){
+                    createAjaxBackHandler(this);
+                }
+            }, false);
+         }else{
+             createAjaxBackHandler(this);
+         }
+     };
+ })(XMLHttpRequest.prototype.open);
+
+(function(send) {
+     XMLHttpRequest.prototype.send = function(arg) {
+         if(arg){
+            ajaxHandler("send/"+this.urlId+"?"+this.queryString+"&"+arg);
+         }else{
+            ajaxHandler("send/"+this.urlId+"?"+this.queryString);
+         }
+         send.call(this,arg);
+     };
+ })(XMLHttpRequest.prototype.send);
+
+(function(setRequestHeader) {
+     XMLHttpRequest.prototype.setRequestHeader = function(k,v) {
+         this.queryString+="&"+k+"="+v;
+         setRequestHeader.call(this,k,v);
+     };
+ })(XMLHttpRequest.prototype.setRequestHeader);
