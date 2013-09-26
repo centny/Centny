@@ -1,0 +1,1 @@
+function testM1() print("sss") end
