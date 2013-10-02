@@ -281,7 +281,7 @@
 			right.frame = CGRectMake (right.frame.origin.x - FRAM_W (lv), right.frame.origin.y, FRAM_W (right), FRAM_H (right));
 			lv.frame = CGRectMake (lv.frame.origin.x - FRAM_W (lv), lv.frame.origin.y, FRAM_W (lv), FRAM_H (lv));
 		} completion:^(BOOL f) {
-			[lv removeFromSuperview];
+//			[lv removeFromSuperview];
 
 			if (finished) {
 				finished (f);
