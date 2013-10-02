@@ -201,7 +201,7 @@
 - (NSURLRequest *)createRequest:(NSString *)url method:(NSString *)method
 {
 	NSURL				*URL		= [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	NSMutableURLRequest *request	= [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:URL_TIME_OUT];
+	NSMutableURLRequest *request	= [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:URL_TIME_OUT];
 
 	[request setHTTPMethod:method];
 	return request;

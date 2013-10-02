@@ -49,19 +49,36 @@
 	}
 }
 
+- (id)init
+{
+	self = [super init];
+
+	if (self) {
+		self.w_h = 0;
+	}
+
+	return self;
+}
+
 - (id)initWithFrame:(CGRect)frame star:(float)star maxStar:(int)max
 {
 	self = [super initWithFrame:frame];
 
 	if (self) {
-        [self initStar:star maxStar:max];
-    }
+		[self initStar:star maxStar:max];
+	}
 
 	return self;
 }
 
 - (void)initStar:(float)star maxStar:(int)max
 {
+	for (UIView *v in self.subviews) {
+		if ([v isKindOfClass:[UIImageView class]]) {
+			[v removeFromSuperview];
+		}
+	}
+
 	int value	= star * 10;
 	int ss		= value / 10;
 
@@ -69,26 +86,27 @@
 	int			hs = (value % 10) / 5;
 	UIImageView *iv;
 	GLfloat		size	= self.frame.size.height;
+	GLfloat		width	= self.w_h + size;
 	int			point	= 0;
 	_stars = [[NSMutableArray alloc] init];
 
 	for (int i = 0; i < ss; i++, point++) {
-		iv = [[UIImageView alloc] initWithFrame:CGRectMake(point * (size + SV_STAR_DIS), 0, size, size)];
-        iv.image=self.starImg;
+		iv			= [[UIImageView alloc] initWithFrame:CGRectMake(point * (width + SV_STAR_DIS), 0, width, size)];
+		iv.image	= self.starImg;
 		[self addSubview:iv];
 		[_stars addObject:iv];
 		[iv release];
 	}
 
-	if ((ss < max) && hs&&self.halfStarImg) {
-		iv = [[UIImageView alloc] initWithFrame:CGRectMake(point * (size + SV_STAR_DIS), 0, size, size)];
-		iv.backgroundColor = [UIColor clearColor];
-        iv.image=self.backStarImg;
+	if ((ss < max) && hs && self.halfStarImg) {
+		iv = [[UIImageView alloc] initWithFrame:CGRectMake(point * (width + SV_STAR_DIS), 0, width, size)];
+		iv.backgroundColor	= [UIColor clearColor];
+		iv.image			= self.backStarImg;
 		[self addSubview:iv];
 		[_backStars addObject:iv];
 		[iv release];
-		iv = [[UIImageView alloc] initWithFrame:CGRectMake(point * (size + SV_STAR_DIS), 0, size, size)];
-        iv.image=self.halfStarImg;
+		iv			= [[UIImageView alloc] initWithFrame:CGRectMake(point * (width + SV_STAR_DIS), 0, width, size)];
+		iv.image	= self.halfStarImg;
 		[self addSubview:iv];
 		_hstar = [iv retain];
 		[iv release];
@@ -99,8 +117,8 @@
 	_backStars = [[NSMutableArray alloc] init];
 
 	for (int i = 0; i < grays; i++, point++) {
-		iv = [[UIImageView alloc] initWithFrame:CGRectMake(point * (size + SV_STAR_DIS), 0, size, size)];
-        iv.image=self.backStarImg;
+		iv			= [[UIImageView alloc] initWithFrame:CGRectMake(point * (width + SV_STAR_DIS), 0, width, size)];
+		iv.image	= self.backStarImg;
 		[self addSubview:iv];
 		[_backStars addObject:iv];
 		[iv release];
