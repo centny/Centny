@@ -1,23 +1,38 @@
-ClassYM = {x=0,y=0}
---这句是重定义元表的索引，必须要有，
-ClassYM.__index = ClassYM
+Account = {
+  balance = 0
+}
 
---模拟构造体，一般名称为new()
-function ClassYM:new(x,y)
-  local self = {}
-  setmetatable(self, ClassYM)   --必须要有
-  self.x = x
-  self.y = y
-  return self
+function Account:new (o)
+  o = o or {}
+  setmetatable(o, self)
+  self.__index = self
+  return o
 end
 
-function ClassYM:test()
-  print(self.x,self.y)
+function Account:deposit (v)
+  self.balance = self.balance + v
 end
 
-objA = ClassYM:new(1,2)
-objA:test()
-objB = ClassYM:new(10,20)
-objB:test()
-print(objA.x,objA.y)
-print(objB.x,objB.y)
+function Account:withdraw (v)
+  if v > self.balance then error"insufficient funds" end
+  self.balance = self.balance - v
+end
+a=Account:new()
+a:deposit(1000)
+a:withdraw(1000)
+SpecialAccount = Account:new()
+function SpecialAccount:withdraw (v)
+  if v - self.balance >= self:getLimit() then
+    error"insufficient funds"
+  end
+  self.balance = self.balance - v
+end
+
+function SpecialAccount:getLimit ()
+  return self.limit or 0
+end
+s = SpecialAccount:new{limit=100.00}
+s:deposit(100.00)
+function ss() end
+local v,err=pcall()
+print(err)
