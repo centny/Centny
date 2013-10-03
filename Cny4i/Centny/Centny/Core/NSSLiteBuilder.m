@@ -254,6 +254,19 @@
 	}
 }
 
+- (int)columnType:(int)idx{
+    return sqlite3_column_bytes(stm_, idx);
+}
+
+-(NSString*)errorMsg{
+    const char* msg=sqlite3_errmsg(db_);
+    if(msg){
+        return [NSString stringWithUTF8String:msg];
+    }else{
+        return nil;
+    }
+}
+
 - (int)freeStm
 {
 	if (stm_) {
@@ -278,7 +291,7 @@
 	}
 }
 
-- (NSArray *)queryAll
+- (NSArray *)queryAll:(SQLiteQueryCallback)back
 {
 	if (!stm_) {
 		self.emsg = @"Statement not initialed";
@@ -286,16 +299,22 @@
 	}
 
 	NSMutableArray *ary = [NSMutableArray array];
-
-	while ([self step] != SQLITE_DONE) {
+    int res;
+	while ((res=[self step]) != SQLITE_DONE) {
 		NSMutableDictionary *row = [NSMutableDictionary dictionary];
 
-		for (int i = 0; i < [self columnCount]; i++) {
-			NSString	*key	= [@"" stringByAppendingString :[self columnNameString:i]];
-			NSString	*val	= [@"" stringByAppendingString :[self columnString:i]];
-			row[key] = val;
-		}
-
+        if(back){
+            back(self,row);
+        }else{
+            for (int i = 0; i < [self columnCount]; i++) {
+                NSString	*key	= [self columnNameString:i];
+                NSString	*val	= [self columnString:i];
+                if(key==nil||val==nil){
+                    continue;
+                }
+                row[[NSString stringWithFormat:@"%@",key]] = [NSString stringWithFormat:@"%@",val];
+            }
+        }
 		[ary addObject:row];
 	}
 
@@ -304,6 +323,7 @@
 
 - (void)dealloc
 {
+    [super dealloc];
 	if (stm_) {
 		sqlite3_finalize(stm_);
 		stm_ = NULL;

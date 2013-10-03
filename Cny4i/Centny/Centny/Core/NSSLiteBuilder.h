@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+@class NSSLiteBuilder;
+typedef void (^SQLiteQueryCallback)(NSSLiteBuilder* builder,NSMutableDictionary* row);
+//
 @interface NSSLiteBuilder : NSObject
 @property(nonatomic) NSString				*emsg;
 @property(nonatomic, readonly) sqlite3		*db;
@@ -32,9 +35,12 @@
 - (NSString *)columnString:(int)idx;
 - (const char *)columnName:(int)idx;
 - (NSString *)columnNameString:(int)idx;
+- (int)columnType:(int)idx;
+- (NSString*)errorMsg;
 - (int)freeStm;
 - (int)step;
 //
-- (NSArray *)queryAll;
+- (NSArray *)queryAll:(SQLiteQueryCallback)back;
 @end
+//
 
