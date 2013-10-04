@@ -31,5 +31,5 @@ end
 function thttp2(msg,cback)
 	print(msg)
     print("kkkkkkk.....")
-	HGet("http://localhost/wdav/LuaApi/LuaApi.json",{a=11,b=2},"hhb",cback)
+	HGet("http://cny.dnsd.me/wdav/LuaApi/MSources.json",{a=11,b=2},"hhb",cback)
 end

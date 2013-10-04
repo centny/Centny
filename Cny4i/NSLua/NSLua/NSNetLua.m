@@ -15,9 +15,9 @@ NSMutableDictionary* __bmaps=nil;
 int lHttpBack(lua_State* l){
     NSString* cback=[NSLua toNSString:-1 lstate:l];
     lua_pop(l, 1);
-    NSString* msg=[NSLua toNSString:-1 lstate:l];
-    lua_pop(l, 1);
     NSString* sdata=[NSLua toNSString:-1 lstate:l];
+    lua_pop(l, 1);
+    NSString* msg=[NSLua toNSString:-1 lstate:l];
     lua_pop(l, 1);
     NetLuaCompleted finish=[[NSNetLua sharedBmaps]objectForKey:cback];
     finish(sdata,msg);

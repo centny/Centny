@@ -36,14 +36,14 @@ static int bcall(lua_State* s){
 //    [lua getglobal:"backc"];
     [self.lua getglobal:"thttp"];
     [self.lua call:0 nrs:0 completed:^(NSString *sdata, NSString *msg) {
-        NSLog(@"Lua thttp ...");
+        NSLog(@"Lua thttp ...:%@",sdata);
     }];
     [self.lua pop:1];
     //
     [self.lua getglobal:"thttp2"];
     [self.lua pushNSString:@"testing..."];
     [self.lua call:1 nrs:0 completed:^(NSString *sdata, NSString *msg) {
-        NSLog(@"Lua thttp2 ...");
+        NSLog(@"Lua thttp2 ...:%@",sdata);
     }];
 //    NSLog(@"%d",[lua istable:-1]);
 //    [lua pushstring:"c"];
