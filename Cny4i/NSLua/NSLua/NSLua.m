@@ -25,22 +25,41 @@
 
 	return self;
 }
-
+- (id)initWithFile:(const char *)file spath:(const char*)sp{
+    self=[self init];
+    if(self){
+        [self addSearchPath:sp];
+        [self dofile:file];
+    }
+    return self;
+}
 - (id)init
 {
 	self = [super self];
 
 	if (self) {
 		_l = luaL_newstate();
+        luaopen_package(_l);
 		luaL_openlibs(_l);
 	}
 
 	return self;
 }
-
+- (void)addSearchPath:(const char *)spath{
+    lua_getglobal(_l, "package" );
+    lua_getfield(_l, -1, "path" ); // get field "path" from table at top of stack (-1)
+    NSString* cpath=[NSString stringWithFormat:@"%s;%s",lua_tostring(_l, -1 ),spath];
+    lua_pop( _l, 1 ); // get rid of the string on the stack we just pushed on line 5
+    lua_pushstring(_l, [cpath UTF8String]); // push the new one
+    lua_setfield(_l, -2, "path" ); // set the field "path" in table at -2 with value at top of stack
+    lua_pop(_l, 1 ); // get rid of package table from top of stack
+}
 - (void)dofile:(const char *)file
 {
-	luaL_dofile(_l, file);
+	int err=luaL_dofile(_l, file);
+    if(err){
+        NSLog(@"dofile:%@",[self toNSString:-1]);
+    }
 }
 
 - (void)getglobal:(const char *)s

@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) lua_State *l;
 + (id)luaWithFile:(const char *)file;
 - (id)initWithFile:(const char *)file;
+- (id)initWithFile:(const char *)file spath:(const char*)sp;
+- (void)addSearchPath:(const char*)spath;
 - (void)dofile:(const char *)file;
 - (void)getglobal:(const char *)s;
 - (void)gettable:(int)idx;

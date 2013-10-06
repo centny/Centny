@@ -33,12 +33,13 @@ typedef void (^URLReqCompleted)(URLRequester* req,NSObject* msg);
 @interface URLRequester : NSURLConnection<NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 @property(nonatomic,readonly)NSDictionary* resHeaders;
 @property(nonatomic,readonly)NSMutableDictionary* reqHeaders;
-@property(nonatomic,readonly)NSData* data;
+@property(nonatomic,readonly)NSMutableData* data;
 @property(nonatomic,readonly)NSString* sdata;
 @property(nonatomic,readonly)NSInteger statusCode;
 @property(nonatomic,readonly)NSMutableURLRequest* request;
 @property(nonatomic,assign)id<URLRequesterDelegate> delegate;
 @property(nonatomic)NSStringEncoding encoding;
+@property (nonatomic, copy) URLReqCompleted completed;
 -(id)initGetURL:(NSString*)url;
 -(id)initGetURL:(NSString*)url completed:(URLReqCompleted)finished;
 -(id)initPostURL:(NSString *)url;

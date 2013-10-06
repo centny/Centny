@@ -63,6 +63,14 @@ int lGetHttp(lua_State* l){
     }
     return self;
 }
+-(id)initWithFile:(const char *)file spath:(const char *)sp{
+    self=[super initWithFile:file spath:sp];
+    if(self){
+        [self lregister:"HGet" func:lGetHttp];
+        [self lregister:"HTTPBack" func:lHttpBack];
+    }
+    return self;
+}
 - (void)call:(int)nargs nrs:(int)nresults completed:(NetLuaCompleted)finish{
     if(finish){
         NSString* key=[NSString stringWithFormat:@"%@",finish];

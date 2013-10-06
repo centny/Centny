@@ -20,7 +20,6 @@
 	NSInteger			statusCode_;
 	NSMutableURLRequest *request_;
 }
-@property (nonatomic, copy) URLReqCompleted completed;
 - (void)newFields;
 // - (NSURLRequest *)createRequest:(NSString *)url method:(NSString *)method dict:(NSDictionary *)dict;
 - (NSURLRequest *)createRequest:(NSString *)url method:(NSString *)method;
