@@ -12,9 +12,42 @@
 @end
 static BOOL __dllog=NO;
 @implementation URLDownloader
-
+-(id)init{
+    self=[super init];
+    if(self){
+        self.clength=self.tlength=0;
+    }
+    return self;
+}
+-(float)trate{
+    if(self.clength<1){
+        return 0;
+    }else{
+        return ((double)self.tlength)/((double)self.clength);
+    }
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    [super connection:connection didReceiveResponse:response];
+    NSString* cl=[self.resHeaders objectForKey:@"Content-Length"];
+    if(cl&&cl.length){
+        self.clength=atol([cl UTF8String]);
+    }else{
+        self.clength=0;
+    }
+    self.tlength=0;
+    if(self.clength&&self.dldelegate&&[self.dldelegate respondsToSelector:@selector(onDownloaderRate:trate:)]){
+        [self.dldelegate onDownloaderRate:self trate:self.trate];
+    }
+}
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    self.tlength+=data.length;
+    if(self.dldelegate&&[self.dldelegate respondsToSelector:@selector(onDownloaderReceive:received:total:)]){
+        [self.dldelegate onDownloaderReceive:self received:self.tlength total:self.clength];
+    }
+    if(self.clength&&self.dldelegate&&[self.dldelegate respondsToSelector:@selector(onDownloaderRate:trate:)]){
+        [self.dldelegate onDownloaderRate:self trate:self.trate];
+    }
     [self.output write:data.bytes maxLength:data.length];
 }
 

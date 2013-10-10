@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C32CB7761803A034000D7F2C /* URLDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7721803A034000D7F2C /* URLDownloader.m */; };
+		C32CB7771803A034000D7F2C /* URLRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7751803A034000D7F2C /* URLRequester.m */; };
 		DF88E76E17146DF400231337 /* UIBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF88E76D17146DF400231337 /* UIBorderView.m */; };
 		DFC80F971713A57E00070B8A /* UICustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F941713A57E00070B8A /* UICustomPageControl.m */; };
 		DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F961713A57E00070B8A /* UIFocusImageView.m */; };
@@ -109,6 +111,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C32CB7721803A034000D7F2C /* URLDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLDownloader.m; sourceTree = "<group>"; };
+		C32CB7731803A034000D7F2C /* URLDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDownloader.h; sourceTree = "<group>"; };
+		C32CB7741803A034000D7F2C /* URLRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLRequester.h; sourceTree = "<group>"; };
+		C32CB7751803A034000D7F2C /* URLRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLRequester.m; sourceTree = "<group>"; };
 		DF88E76C17146DF400231337 /* UIBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderView.h; sourceTree = "<group>"; };
 		DF88E76D17146DF400231337 /* UIBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBorderView.m; sourceTree = "<group>"; };
 		DFC80F931713A57E00070B8A /* UICustomPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomPageControl.h; sourceTree = "<group>"; };
@@ -333,6 +339,10 @@
 		E9411DBB15FF305900975945 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				C32CB7721803A034000D7F2C /* URLDownloader.m */,
+				C32CB7731803A034000D7F2C /* URLDownloader.h */,
+				C32CB7741803A034000D7F2C /* URLRequester.h */,
+				C32CB7751803A034000D7F2C /* URLRequester.m */,
 				E9411DBC15FF305900975945 /* SocketBuilder.h */,
 				E9411DBD15FF305900975945 /* SocketBuilder.m */,
 			);
@@ -595,6 +605,7 @@
 				E9411DCC15FF305900975945 /* LineDrawer.m in Sources */,
 				E9411DCE15FF305900975945 /* UILineView.m in Sources */,
 				E9411DD015FF305900975945 /* UIStarView.m in Sources */,
+				C32CB7771803A034000D7F2C /* URLRequester.m in Sources */,
 				E92C7D9E16002BA600E90B77 /* UIBoundsImageView.m in Sources */,
 				E92C7DA21600328800E90B77 /* NSPart.m in Sources */,
 				E93C1C721602CFA600C1F4F5 /* NSGImage.m in Sources */,
@@ -606,6 +617,7 @@
 				E972037F16105E7500CA30D7 /* NSRefreshProxy.m in Sources */,
 				E9338E44161181890065FC44 /* CoreMethod.m in Sources */,
 				E9AB5B0016290D8B00AF40C1 /* NSLineString.m in Sources */,
+				C32CB7761803A034000D7F2C /* URLDownloader.m in Sources */,
 				DFC80F971713A57E00070B8A /* UICustomPageControl.m in Sources */,
 				DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */,
 				DF88E76E17146DF400231337 /* UIBorderView.m in Sources */,
