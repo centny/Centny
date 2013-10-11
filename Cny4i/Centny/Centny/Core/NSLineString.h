@@ -22,3 +22,4 @@
 @property (nonatomic, retain) NSString	*targetStr;
 @property (nonatomic, readonly) NSArray *lines;
 @end
+

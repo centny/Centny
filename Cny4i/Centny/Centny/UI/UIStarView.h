@@ -20,4 +20,3 @@
 @property(nonatomic, retain) IBOutlet UIImage	*halfStarImg;
 @property(nonatomic, retain) IBOutlet UIImage	*backStarImg;
 @end
-

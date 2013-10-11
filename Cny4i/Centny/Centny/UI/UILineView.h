@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "LineDrawer.h"
-//can adding some normal line for the UIView.
-@interface UILineView:UIView{
-    LineDrawer *drawer;
+// can adding some normal line for the UIView.
+@interface UILineView : UIView {
+	LineDrawer *drawer;
 }
-@property(nonatomic,retain)LineDrawer *drawer;
--(void)addTopLine;
--(void)addBottomLine;
--(void)addHCenterLine;
--(void)addVCenterLine;
--(void)addLeftLine;
--(void)addRightLine;
--(void)addLine:(CGTwoPoint*) tp;
+@property(nonatomic, retain) LineDrawer *drawer;
+- (void)addTopLine;
+- (void)addBottomLine;
+- (void)addHCenterLine;
+- (void)addVCenterLine;
+- (void)addLeftLine;
+- (void)addRightLine;
+- (void)addLine:(CGTwoPoint *)tp;
 @end

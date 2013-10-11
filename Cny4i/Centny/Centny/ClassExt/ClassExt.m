@@ -25,7 +25,7 @@
 
 - (float)heightByLineWidth:(float)width font:(UIFont *)font
 {
-	if ([@"" isEqualToString:self]) {
+	if ([@"" isEqualToString : self]) {
 		NSDLog(@"the text can't be nil or empty");
 		return -1;
 	}
@@ -55,9 +55,12 @@
 	[label release];
 	return height;
 }
--(BOOL)isEmptyOrWhiteSpace{
-    return [self stringByReplacingOccurrencesOfString:@" " withString:@""].length<1;
+
+- (BOOL)isEmptyOrWhiteSpace
+{
+	return [self stringByReplacingOccurrencesOfString:@" " withString:@""].length < 1;
 }
+
 @end
 // //////////////////////////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////NSDictionary/////////////////////////////////////////////////
@@ -131,9 +134,12 @@
 {
 	return [UIImage imageWithColor:self];
 }
-+(UIColor*)colorWithR:(int)r G:(int)g B:(int)b A:(float)a{
-    return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
+
++ (UIColor *)colorWithR:(int)r G:(int)g B:(int)b A:(float)a
+{
+	return [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
 }
+
 @end
 // //////////////////////////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////UIImage extensions.//////////////////////////////////////////
@@ -242,52 +248,56 @@
 {
 	rv.frame = CGRectMake(FRAM_XW(left), rv.frame.origin.y, FRAM_W(rv), FRAM_H(rv));
 	[UIView animateWithDuration:0.5 animations:^{
-			left.frame = CGRectMake (left.frame.origin.x - FRAM_W (rv), left.frame.origin.y, FRAM_W (left), FRAM_H (left));
-			rv.frame = CGRectMake (rv.frame.origin.x - FRAM_W (rv), rv.frame.origin.y, FRAM_W (rv), FRAM_H (rv));
-		} completion:^(BOOL f) {
-			if (finished) {
-				finished (f);
-			}
-		}];
+		left.frame = CGRectMake(left.frame.origin.x - FRAM_W(rv), left.frame.origin.y, FRAM_W(left), FRAM_H(left));
+		rv.frame = CGRectMake(rv.frame.origin.x - FRAM_W(rv), rv.frame.origin.y, FRAM_W(rv), FRAM_H(rv));
+	} completion:^(BOOL f) {
+		if (finished) {
+			finished(f);
+		}
+	}];
 }
+
 + (void)popRView:(UIView *)left rv:(UIView *)rv finished:(void (^)(BOOL))finished
 {
 	[UIView animateWithDuration:0.5 animations:^{
-			left.frame = CGRectMake (left.frame.origin.x + FRAM_W (rv), left.frame.origin.y, FRAM_W (left), FRAM_H (left));
-			rv.frame = CGRectMake (rv.frame.origin.x + FRAM_W (rv), rv.frame.origin.y, FRAM_W (rv), FRAM_H (rv));
-		} completion:^(BOOL f) {
-//			[rv removeFromSuperview];
+		left.frame = CGRectMake(left.frame.origin.x + FRAM_W(rv), left.frame.origin.y, FRAM_W(left), FRAM_H(left));
+		rv.frame = CGRectMake(rv.frame.origin.x + FRAM_W(rv), rv.frame.origin.y, FRAM_W(rv), FRAM_H(rv));
+	} completion:^(BOOL f) {
+		//			[rv removeFromSuperview];
 
-			if (finished) {
-				finished (f);
-			}
-		}];
+		if (finished) {
+			finished(f);
+		}
+	}];
 }
+
 + (void)pushLView:(UIView *)right lv:(UIView *)lv finished:(void (^)(BOOL))finished
 {
 	lv.frame = CGRectMake(-FRAM_W(lv), lv.frame.origin.y, FRAM_W(lv), FRAM_H(lv));
 	[UIView animateWithDuration:0.5 animations:^{
-			right.frame = CGRectMake (right.frame.origin.x + FRAM_W (lv), right.frame.origin.y, FRAM_W (right), FRAM_H (right));
-			lv.frame = CGRectMake (lv.frame.origin.x + FRAM_W (lv), lv.frame.origin.y, FRAM_W (lv), FRAM_H (lv));
-		} completion:^(BOOL f) {
-			if (finished) {
-				finished (f);
-			}
-		}];
+		right.frame = CGRectMake(right.frame.origin.x + FRAM_W(lv), right.frame.origin.y, FRAM_W(right), FRAM_H(right));
+		lv.frame = CGRectMake(lv.frame.origin.x + FRAM_W(lv), lv.frame.origin.y, FRAM_W(lv), FRAM_H(lv));
+	} completion:^(BOOL f) {
+		if (finished) {
+			finished(f);
+		}
+	}];
 }
+
 + (void)popLView:(UIView *)right lv:(UIView *)lv finished:(void (^)(BOOL))finished
 {
 	[UIView animateWithDuration:0.5 animations:^{
-			right.frame = CGRectMake (right.frame.origin.x - FRAM_W (lv), right.frame.origin.y, FRAM_W (right), FRAM_H (right));
-			lv.frame = CGRectMake (lv.frame.origin.x - FRAM_W (lv), lv.frame.origin.y, FRAM_W (lv), FRAM_H (lv));
-		} completion:^(BOOL f) {
-//			[lv removeFromSuperview];
+		right.frame = CGRectMake(right.frame.origin.x - FRAM_W(lv), right.frame.origin.y, FRAM_W(right), FRAM_H(right));
+		lv.frame = CGRectMake(lv.frame.origin.x - FRAM_W(lv), lv.frame.origin.y, FRAM_W(lv), FRAM_H(lv));
+	} completion:^(BOOL f) {
+		//			[lv removeFromSuperview];
 
-			if (finished) {
-				finished (f);
-			}
-		}];
+		if (finished) {
+			finished(f);
+		}
+	}];
 }
+
 + (void)reviseTextDisplay:(UIView *)view
 {
 	int x, y, w, h;
@@ -398,7 +408,7 @@
 @implementation UIColor (String)
 + (id)colorWithString:(NSString *)hex
 {
-	if (![@"#" isEqualToString:[hex substringToIndex:1]]) {
+	if (![@"#" isEqualToString :[hex substringToIndex:1]]) {
 		return NULL;
 	}
 
@@ -478,4 +488,3 @@
 }
 
 @end
-

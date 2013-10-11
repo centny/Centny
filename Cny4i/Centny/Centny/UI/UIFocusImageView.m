@@ -152,10 +152,10 @@
 - (void)scrollNext
 {
 	[UIView animateWithDuration:0.4 animations:^{
-			scroll.contentOffset = CGPointMake (scroll.contentOffset.x + ssize.width, 0);
-		} completion:^(BOOL finished) {
-			[self scrollViewDidEndDecelerating:nil];
-		}];
+		scroll.contentOffset = CGPointMake(scroll.contentOffset.x + ssize.width, 0);
+	} completion:^(BOOL finished) {
+		[self scrollViewDidEndDecelerating:nil];
+	}];
 }
 
 /*
@@ -177,4 +177,3 @@
 }
 
 @end
-

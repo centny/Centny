@@ -8,10 +8,15 @@
 
 #ifndef Centny_Centny_h
 #define Centny_Centny_h
+	// define.
 #import "GeneralDef.h"
+	// net.
 #import "Net/SocketBuilder.h"
+#import "Net/URLRequester.h"
+#import "Net/URLDownloader.h"
+	// class extenral.
 #import "ClassExt/ClassExt.h"
-//UI
+	// UI.
 #import "UI/UIStarView.h"
 #import "UI/LineDrawer.h"
 #import "UI/UILineView.h"
@@ -23,9 +28,11 @@
 #import "UI/UITableExtView.h"
 #import "UI/UITreeView.h"
 #import "UI/UIPushTreeView.h"
-//Core
+	// Core.
 #import "Core/NSPart.h"
 #import "Core/NSGImage.h"
 #import "Core/CoreMethod.h"
+#import "Core/NSLineString.h"
+	//
+#endif	/* ifndef Centny_Centny_h */
 
-#endif

@@ -7,8 +7,7 @@
 //
 
 #import "NSNetLua.h"
-#import "URLRequester.h"
-#import "ClassExt.h"
+#import "Centny.h"
 //
 NSMutableDictionary* __bmaps=nil;
 

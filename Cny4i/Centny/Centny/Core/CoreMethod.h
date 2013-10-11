@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-//define some core method for log.
+// define some core method for log.
 void NSUseDLog(bool use);
+
 void NSUseRelLog(bool use);
-void NSDLog(NSString *format,...);
-void NSRelLog(NSString *format,...);
-NSString* DocumentDirectory();
+
+void NSDLog(NSString *format, ...);
+
+void NSRelLog(NSString *format, ...);
+
+NSString *DocumentDirectory();

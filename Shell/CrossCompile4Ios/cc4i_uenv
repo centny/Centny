@@ -9,6 +9,7 @@ unset CXX
 unset AR
 unset AS
 unset NM
+unset LIPO
 unset CXXCPP
 unset LDFLAGS
 unset CFLAGS

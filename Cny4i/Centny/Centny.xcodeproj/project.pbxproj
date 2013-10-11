@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		C32CB7761803A034000D7F2C /* URLDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7721803A034000D7F2C /* URLDownloader.m */; };
 		C32CB7771803A034000D7F2C /* URLRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7751803A034000D7F2C /* URLRequester.m */; };
-		DF88E76E17146DF400231337 /* UIBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF88E76D17146DF400231337 /* UIBorderView.m */; };
-		DFC80F971713A57E00070B8A /* UICustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F941713A57E00070B8A /* UICustomPageControl.m */; };
-		DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F961713A57E00070B8A /* UIFocusImageView.m */; };
+		DF88E76E17146DF400231337 /* UIBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF88E76D17146DF400231337 /* UIBorderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DFC80F971713A57E00070B8A /* UICustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F941713A57E00070B8A /* UICustomPageControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F961713A57E00070B8A /* UIFocusImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E90B812915FF294C00327992 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90B812815FF294C00327992 /* CFNetwork.framework */; };
 		E90B813915FF2A6C00327992 /* gray_star.png in Resources */ = {isa = PBXBuildFile; fileRef = E90B813615FF2A6C00327992 /* gray_star.png */; };
 		E90B813A15FF2A6C00327992 /* half_star.png in Resources */ = {isa = PBXBuildFile; fileRef = E90B813715FF2A6C00327992 /* half_star.png */; };
@@ -19,46 +19,46 @@
 		E90B813F15FF2AD300327992 /* StarViewVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E90B813E15FF2AD300327992 /* StarViewVCtl.m */; };
 		E90B814215FF2B5300327992 /* NavRootVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E90B814115FF2B5300327992 /* NavRootVCtl.m */; };
 		E92C7D9A16002B9200E90B77 /* BoundsImageVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7D9916002B9200E90B77 /* BoundsImageVCtl.m */; };
-		E92C7D9E16002BA600E90B77 /* UIBoundsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7D9D16002BA600E90B77 /* UIBoundsImageView.m */; };
+		E92C7D9E16002BA600E90B77 /* UIBoundsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7D9D16002BA600E90B77 /* UIBoundsImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E92C7D9F16002BA600E90B77 /* UIBoundsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7D9D16002BA600E90B77 /* UIBoundsImageView.m */; };
-		E92C7DA21600328800E90B77 /* NSPart.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7DA11600328800E90B77 /* NSPart.m */; };
+		E92C7DA21600328800E90B77 /* NSPart.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7DA11600328800E90B77 /* NSPart.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E92C7DA31600328800E90B77 /* NSPart.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C7DA11600328800E90B77 /* NSPart.m */; };
 		E92C7DAC160075E000E90B77 /* taobaolevel.txt in Resources */ = {isa = PBXBuildFile; fileRef = E92C7DAB160075E000E90B77 /* taobaolevel.txt */; };
 		E92C7DB0160076C800E90B77 /* taobaolevel.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C7DAF160076C800E90B77 /* taobaolevel.png */; };
-		E9338E44161181890065FC44 /* CoreMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E9338E43161181890065FC44 /* CoreMethod.m */; };
+		E9338E44161181890065FC44 /* CoreMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E9338E43161181890065FC44 /* CoreMethod.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9338E45161181890065FC44 /* CoreMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E9338E43161181890065FC44 /* CoreMethod.m */; };
 		E93C1C6A1602C49200C1F4F5 /* ColorImageVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C1C691602C49200C1F4F5 /* ColorImageVCtl.m */; };
 		E93C1C6D1602C91400C1F4F5 /* test_color.png in Resources */ = {isa = PBXBuildFile; fileRef = E93C1C6C1602C91400C1F4F5 /* test_color.png */; };
 		E93C1C6F1602CCAA00C1F4F5 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E93C1C6E1602CCAA00C1F4F5 /* green.png */; };
-		E93C1C721602CFA600C1F4F5 /* NSGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C1C711602CFA600C1F4F5 /* NSGImage.m */; };
+		E93C1C721602CFA600C1F4F5 /* NSGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C1C711602CFA600C1F4F5 /* NSGImage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93C1C731602CFA600C1F4F5 /* NSGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C1C711602CFA600C1F4F5 /* NSGImage.m */; };
-		E9411DC715FF305900975945 /* ClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DB915FF305900975945 /* ClassExt.m */; };
+		E9411DC715FF305900975945 /* ClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DB915FF305900975945 /* ClassExt.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DC815FF305900975945 /* ClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DB915FF305900975945 /* ClassExt.m */; };
-		E9411DC915FF305900975945 /* SocketBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DBD15FF305900975945 /* SocketBuilder.m */; };
+		E9411DC915FF305900975945 /* SocketBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DBD15FF305900975945 /* SocketBuilder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DCA15FF305900975945 /* SocketBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DBD15FF305900975945 /* SocketBuilder.m */; };
 		E9411DCB15FF305900975945 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9411DBE15FF305900975945 /* readme.txt */; };
-		E9411DCC15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; };
+		E9411DCC15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DCD15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; };
-		E9411DCE15FF305900975945 /* UILineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC415FF305900975945 /* UILineView.m */; };
+		E9411DCE15FF305900975945 /* UILineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC415FF305900975945 /* UILineView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DCF15FF305900975945 /* UILineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC415FF305900975945 /* UILineView.m */; };
-		E9411DD015FF305900975945 /* UIStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC615FF305900975945 /* UIStarView.m */; };
+		E9411DD015FF305900975945 /* UIStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC615FF305900975945 /* UIStarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DD115FF305900975945 /* UIStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC615FF305900975945 /* UIStarView.m */; };
 		E9411DD215FF30AF00975945 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90B812815FF294C00327992 /* CFNetwork.framework */; };
 		E9411DD315FF30B200975945 /* libCentny.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9897B3B15FEE2E900A30E15 /* libCentny.a */; };
 		E9411DD715FF3B3500975945 /* LineViewVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DD515FF3B3500975945 /* LineViewVCtl.m */; };
 		E9411DDA15FF454500975945 /* ClassExtVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DD915FF454400975945 /* ClassExtVCtl.m */; };
 		E95F9020163670EF00F25CA8 /* .PrjEnv.cfg in Resources */ = {isa = PBXBuildFile; fileRef = E95F901F163670EF00F25CA8 /* .PrjEnv.cfg */; };
-		E97203701610135C00CA30D7 /* UITableExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E972036F1610135C00CA30D7 /* UITableExtView.m */; };
+		E97203701610135C00CA30D7 /* UITableExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E972036F1610135C00CA30D7 /* UITableExtView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E97203711610135C00CA30D7 /* UITableExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E972036F1610135C00CA30D7 /* UITableExtView.m */; };
 		E97203741610225600CA30D7 /* TableExtVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E97203731610225600CA30D7 /* TableExtVCtl.m */; };
-		E972037F16105E7500CA30D7 /* NSRefreshProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E972037E16105E7500CA30D7 /* NSRefreshProxy.m */; };
+		E972037F16105E7500CA30D7 /* NSRefreshProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E972037E16105E7500CA30D7 /* NSRefreshProxy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E972038016105E7500CA30D7 /* NSRefreshProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E972037E16105E7500CA30D7 /* NSRefreshProxy.m */; };
 		E97348B7162268EB00B49D23 /* LeftPushEffectVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E97348B6162268EB00B49D23 /* LeftPushEffectVCtl.m */; };
 		E97348C7162281F300B49D23 /* CellAnimationVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E97348C6162281F300B49D23 /* CellAnimationVCtl.m */; };
-		E9855903160AB6B400CA258E /* UIWebExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9855902160AB6B400CA258E /* UIWebExtView.m */; };
+		E9855903160AB6B400CA258E /* UIWebExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9855902160AB6B400CA258E /* UIWebExtView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9855904160AB6B400CA258E /* UIWebExtView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9855902160AB6B400CA258E /* UIWebExtView.m */; };
 		E9855909160ABAFD00CA258E /* WebViewVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E9855908160ABAFD00CA258E /* WebViewVCtl.m */; };
-		E985590C160AC03100CA258E /* UIRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = E985590B160AC03100CA258E /* UIRefreshView.m */; };
+		E985590C160AC03100CA258E /* UIRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = E985590B160AC03100CA258E /* UIRefreshView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E985590D160AC03100CA258E /* UIRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = E985590B160AC03100CA258E /* UIRefreshView.m */; };
 		E9855914160B084D00CA258E /* UIWebExtView.dat in Resources */ = {isa = PBXBuildFile; fileRef = E9855913160B084D00CA258E /* UIWebExtView.dat */; };
 		E9897BDF15FEE9F100A30E15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9897BDD15FEE9F100A30E15 /* InfoPlist.strings */; };
@@ -76,9 +76,9 @@
 		E9897C2B15FEEB3F00A30E15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9897C2A15FEEB3F00A30E15 /* UIKit.framework */; };
 		E9897C2C15FEEB5900A30E15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9897C2A15FEEB3F00A30E15 /* UIKit.framework */; };
 		E99BE679160C1FC2005E51B7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E99BE678160C1FC2005E51B7 /* Default-568h@2x.png */; };
-		E99BE6B8160C63EB005E51B7 /* UIPushTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B5160C63EA005E51B7 /* UIPushTreeView.m */; };
+		E99BE6B8160C63EB005E51B7 /* UIPushTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B5160C63EA005E51B7 /* UIPushTreeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99BE6B9160C63EB005E51B7 /* UIPushTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B5160C63EA005E51B7 /* UIPushTreeView.m */; };
-		E99BE6BA160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; };
+		E99BE6BA160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99BE6BB160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; };
 		E99BE6CD160C6E8C005E51B7 /* TreeVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6CC160C6E8C005E51B7 /* TreeVCtl.m */; };
 		E99BE6D2160C6F23005E51B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6D1160C6F23005E51B7 /* JSONKit.m */; };
@@ -94,7 +94,7 @@
 		E99BE6E7160C6F84005E51B7 /* SubChild.json in Resources */ = {isa = PBXBuildFile; fileRef = E99BE6DD160C6F84005E51B7 /* SubChild.json */; };
 		E99BE6EA160C6FB6005E51B7 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = E99BE6E8160C6FB6005E51B7 /* closed.png */; };
 		E99BE6EB160C6FB6005E51B7 /* opened.png in Resources */ = {isa = PBXBuildFile; fileRef = E99BE6E9160C6FB6005E51B7 /* opened.png */; };
-		E9AB5B0016290D8B00AF40C1 /* NSLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB5AFF16290D8B00AF40C1 /* NSLineString.m */; };
+		E9AB5B0016290D8B00AF40C1 /* NSLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB5AFF16290D8B00AF40C1 /* NSLineString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9AB5B0116290D8B00AF40C1 /* NSLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB5AFF16290D8B00AF40C1 /* NSLineString.m */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		E9897B3915FEE2E900A30E15 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
+			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
 			);
@@ -591,7 +591,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\ncopydirectory(){\n    pcount=$#\n    if [ $pcount -lt 3 ];then\n    echo \"Usage:cpdir src dst pattern\"\n    exit\n    fi\n    pwd_dir=`pwd`\n    pary=$@\n    incary=${pary[@]:3}\n    copydir(){\n        cd $1\n        for inc in $incary;do\n        iary=`ls $inc 2>/dev/null`\n        for i in $iary;do\n        if [ -f $i ];then\n        cp $i $2\n        fi\n        done\n        done\n        for i in $(ls);do\n        dir=\"$1/$i\"\n        if [ -d $dir ];then\n        if [ ! -d \"$2/$i\" ];then\n        mkdir $2/$i 2>/dev/null\n        fi\n        copydir $dir $2/$i\n        fi\n        done\n    }\n    #initial.\n    src=$1\n    dst=$2\n    if [ ! -d $2 ];then\n    echo \"$2 directory is not exist!\"\n    exit 1\n    fi\n    tmp=${src:${#src}-1}\n        if [ \"$tmp\" = \"/\" ];then\n        copydir $src $dst\n        else\n        leaf=${src##*/}\n            if [ ! -d \"$dst/$leaf\" ];then\n            mkdir $dst/$leaf\n            fi\n            copydir $src $dst/$leaf\n            fi\n        }\n        inc_dir=$TARGET_BUILD_DIR/include\n        if [ ! -d $inc_dir ];then\n        mkdir $inc_dir\n        fi\n        copydirectory $SOURCE_ROOT/$PROJECT_NAME $inc_dir *.h";
+			shellScript = "#!/bin/bash\ncopydirectory(){\n    pcount=$#\n    if [ $pcount -lt 3 ];then\n    echo \"Usage:cpdir src dst pattern\"\n    exit\n    fi\n    pwd_dir=`pwd`\n    pary=$@\n    incary=${pary[@]:3}\n    copydir(){\n        cd $1\n        for inc in $incary;do\n        iary=`ls $inc 2>/dev/null`\n        for i in $iary;do\n        if [ -f $i ];then\n        cp $i $2\n        fi\n        done\n        done\n        for i in $(ls);do\n        dir=\"$1/$i\"\n        if [ -d $dir ];then\n        if [ ! -d \"$2/$i\" ];then\n        mkdir $2/$i 2>/dev/null\n        fi\n        copydir $dir $2/$i\n        fi\n        done\n    }\n    #initial.\n    src=$1\n    dst=$2\n    if [ ! -d $2 ];then\n    echo \"$2 directory is not exist!\"\n    exit 1\n    fi\n    tmp=${src:${#src}-1}\n        if [ \"$tmp\" = \"/\" ];then\n        copydir $src $dst\n        else\n        leaf=${src##*/}\n            if [ ! -d \"$dst/$leaf\" ];then\n            mkdir $dst/$leaf\n            fi\n            copydir $src $dst/$leaf\n            fi\n        }\n        inc_dir=$TARGET_BUILD_DIR/\n        if [ ! -d $inc_dir ];then\n        mkdir $inc_dir\n        fi\n        copydirectory $SOURCE_ROOT/$PROJECT_NAME $inc_dir *.h";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -737,24 +737,28 @@
 		E9897B4A15FEE2E900A30E15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = Centny/Centny.h;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 armv6";
 			};
 			name = Debug;
 		};
 		E9897B4B15FEE2E900A30E15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = Centny/Centny.h;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 armv6";
 			};
 			name = Release;
 		};

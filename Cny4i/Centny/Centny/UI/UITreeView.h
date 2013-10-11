@@ -70,4 +70,3 @@ typedef enum {
 @property (nonatomic, assign) id <UITreeViewDelegate>	delegatetvd;
 @property (nonatomic, assign) UITreeView				*parent;
 @end
-

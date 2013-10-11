@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -lt 4 ];then
+if [ $# -lt 3 ];then
  echo "Usage:cc4i_mbuild <instll path> <target arches> <target library for making universal>"
  exit
 fi
@@ -45,7 +45,7 @@ for lf in $T_ULIB;do
   LIPO_ARGS="$LIPO_ARGS -arch $arch $INSTALL_DIR/$arch/lib/$lf"
  done
  echo "LIPO ARGS:$LIPO_ARGS"
- lipo $LIPO_ARGS -output $T_ULIB_OUT/$lf -create
+ $LIPO $LIPO_ARGS -output $T_ULIB_OUT/$lf -create
 done
 echo "make universal end..."
 ################################################

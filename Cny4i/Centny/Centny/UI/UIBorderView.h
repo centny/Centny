@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIBorderView : UIView
-@property(nonatomic)float cornerRadius;
-@property(nonatomic)float borderWidth;
-@property(nonatomic,retain)UIColor* borderColor;
+@property(nonatomic) float				cornerRadius;
+@property(nonatomic) float				borderWidth;
+@property(nonatomic, retain) UIColor	*borderColor;
 @end

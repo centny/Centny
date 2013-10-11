@@ -132,9 +132,9 @@
 
 	if (self) {
 		[self newFields];
-        NSLog(@"%@",[args dictionaryByURLQuery]);
+		NSLog(@"%@", [args dictionaryByURLQuery]);
 		[self.reqHeaders addEntriesFromDictionary:[args dictionaryByURLQuery]];
-        NSLog(@"%@",self.reqHeaders);
+		NSLog(@"%@", self.reqHeaders);
 		self.completed = finished;
 	}
 
@@ -250,4 +250,3 @@
 }
 
 @end
-
