@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C304EB70180854FA0068CEA7 /* NSSLiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C304EB6E180854FA0068CEA7 /* NSSLiteBuilder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		C32CB7761803A034000D7F2C /* URLDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7721803A034000D7F2C /* URLDownloader.m */; };
 		C32CB7771803A034000D7F2C /* URLRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = C32CB7751803A034000D7F2C /* URLRequester.m */; };
 		DF88E76E17146DF400231337 /* UIBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF88E76D17146DF400231337 /* UIBorderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DFC80F971713A57E00070B8A /* UICustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F941713A57E00070B8A /* UICustomPageControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F961713A57E00070B8A /* UIFocusImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DFC80F981713A57E00070B8A /* UIFocusImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80F961713A57E00070B8A /* UIFocusImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		E90B812915FF294C00327992 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90B812815FF294C00327992 /* CFNetwork.framework */; };
 		E90B813915FF2A6C00327992 /* gray_star.png in Resources */ = {isa = PBXBuildFile; fileRef = E90B813615FF2A6C00327992 /* gray_star.png */; };
 		E90B813A15FF2A6C00327992 /* half_star.png in Resources */ = {isa = PBXBuildFile; fileRef = E90B813715FF2A6C00327992 /* half_star.png */; };
@@ -37,7 +38,7 @@
 		E9411DC915FF305900975945 /* SocketBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DBD15FF305900975945 /* SocketBuilder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DCA15FF305900975945 /* SocketBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DBD15FF305900975945 /* SocketBuilder.m */; };
 		E9411DCB15FF305900975945 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9411DBE15FF305900975945 /* readme.txt */; };
-		E9411DCC15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E9411DCC15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		E9411DCD15FF305900975945 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC215FF305900975945 /* LineDrawer.m */; };
 		E9411DCE15FF305900975945 /* UILineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC415FF305900975945 /* UILineView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9411DCF15FF305900975945 /* UILineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9411DC415FF305900975945 /* UILineView.m */; };
@@ -78,7 +79,7 @@
 		E99BE679160C1FC2005E51B7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E99BE678160C1FC2005E51B7 /* Default-568h@2x.png */; };
 		E99BE6B8160C63EB005E51B7 /* UIPushTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B5160C63EA005E51B7 /* UIPushTreeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99BE6B9160C63EB005E51B7 /* UIPushTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B5160C63EA005E51B7 /* UIPushTreeView.m */; };
-		E99BE6BA160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E99BE6BA160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		E99BE6BB160C63EB005E51B7 /* UITreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6B7160C63EB005E51B7 /* UITreeView.m */; };
 		E99BE6CD160C6E8C005E51B7 /* TreeVCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6CC160C6E8C005E51B7 /* TreeVCtl.m */; };
 		E99BE6D2160C6F23005E51B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E99BE6D1160C6F23005E51B7 /* JSONKit.m */; };
@@ -111,6 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C304EB6E180854FA0068CEA7 /* NSSLiteBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSSLiteBuilder.m; path = Core/NSSLiteBuilder.m; sourceTree = "<group>"; };
+		C304EB6F180854FA0068CEA7 /* NSSLiteBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSSLiteBuilder.h; path = Core/NSSLiteBuilder.h; sourceTree = "<group>"; };
 		C32CB7721803A034000D7F2C /* URLDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLDownloader.m; sourceTree = "<group>"; };
 		C32CB7731803A034000D7F2C /* URLDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDownloader.h; sourceTree = "<group>"; };
 		C32CB7741803A034000D7F2C /* URLRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLRequester.h; sourceTree = "<group>"; };
@@ -300,6 +303,8 @@
 		E92C7DA41600328E00E90B77 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C304EB6F180854FA0068CEA7 /* NSSLiteBuilder.h */,
+				C304EB6E180854FA0068CEA7 /* NSSLiteBuilder.m */,
 				E92C7DA01600328800E90B77 /* NSPart.h */,
 				E92C7DA11600328800E90B77 /* NSPart.m */,
 				E93C1C701602CFA600C1F4F5 /* NSGImage.h */,
@@ -600,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C304EB70180854FA0068CEA7 /* NSSLiteBuilder.m in Sources */,
 				E9411DC715FF305900975945 /* ClassExt.m in Sources */,
 				E9411DC915FF305900975945 /* SocketBuilder.m in Sources */,
 				E9411DCC15FF305900975945 /* LineDrawer.m in Sources */,
@@ -711,7 +717,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -728,7 +734,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -737,28 +743,42 @@
 		E9897B4A15FEE2E900A30E15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7,
+					armv7s,
+					i386,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Centny/Centny.h;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 armv6";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		E9897B4B15FEE2E900A30E15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7,
+					armv7s,
+					i386,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Centny/Centny.h;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386 armv6";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

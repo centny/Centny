@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 @class NSSLiteBuilder;
-typedef void (^SQLiteQueryCallback)(NSSLiteBuilder* builder,NSMutableDictionary* row);
+typedef void (^ SQLiteQueryCallback)(NSSLiteBuilder *builder, NSMutableDictionary *row);
 //
 @interface NSSLiteBuilder : NSObject
-@property(nonatomic) NSString				*emsg;
+@property(nonatomic, retain) NSString		*emsg;
 @property(nonatomic, readonly) sqlite3		*db;
 @property(nonatomic, readonly) sqlite3_stmt *stm;
 + (id)builderWithDb:(NSString *)spath;
@@ -36,7 +36,7 @@ typedef void (^SQLiteQueryCallback)(NSSLiteBuilder* builder,NSMutableDictionary*
 - (const char *)columnName:(int)idx;
 - (NSString *)columnNameString:(int)idx;
 - (int)columnType:(int)idx;
-- (NSString*)errorMsg;
+- (NSString *)errorMsg;
 - (int)freeStm;
 - (int)step;
 //

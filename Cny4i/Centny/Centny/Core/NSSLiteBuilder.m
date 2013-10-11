@@ -323,7 +323,6 @@
 
 - (void)dealloc
 {
-    [super dealloc];
 	if (stm_) {
 		sqlite3_finalize(stm_);
 		stm_ = NULL;
@@ -333,6 +332,7 @@
 		sqlite3_close(db_);
 		db_ = NULL;
 	}
+    [super dealloc];
 }
 
 @end

@@ -33,6 +33,7 @@
 #import "Core/NSGImage.h"
 #import "Core/CoreMethod.h"
 #import "Core/NSLineString.h"
+#import "Core/NSSLiteBuilder.h"
 	//
 #endif	/* ifndef Centny_Centny_h */
 
