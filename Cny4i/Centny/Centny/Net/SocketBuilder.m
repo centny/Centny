@@ -33,6 +33,7 @@ void readStream(CFReadStreamRef stream, CFStreamEventType eventType, void *info)
 	if (client.delegate) {
 		[client.delegate onReceiveData:stream type:eventType client:client];
 	}
+    NSUseDLog(1);
 }
 
 void writeStream(CFWriteStreamRef stream, CFStreamEventType eventType, void *info)

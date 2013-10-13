@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3A321E8180A66B9009E53EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A321E7180A66B9009E53EE /* Foundation.framework */; };
+		C3A321EA180A66B9009E53EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A321E9180A66B9009E53EE /* CoreGraphics.framework */; };
+		C3A321EC180A66B9009E53EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A321EB180A66B9009E53EE /* UIKit.framework */; };
+		C3A321F2180A66B9009E53EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A321F0180A66B9009E53EE /* InfoPlist.strings */; };
+		C3A321F4180A66B9009E53EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A321F3180A66B9009E53EE /* main.m */; };
+		C3A321F8180A66B9009E53EE /* CnyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A321F7180A66B9009E53EE /* CnyAppDelegate.m */; };
+		C3A321FB180A66B9009E53EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A321F9180A66B9009E53EE /* Main.storyboard */; };
+		C3A321FE180A66B9009E53EE /* CnyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A321FD180A66B9009E53EE /* CnyViewController.m */; };
+		C3A32200180A66B9009E53EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A321FF180A66B9009E53EE /* Images.xcassets */; };
+		C3A32236180A6843009E53EE /* libCentny.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A32233180A6829009E53EE /* libCentny.a */; };
+		C3A32238180A69BC009E53EE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A32237180A69BB009E53EE /* libc++.dylib */; };
+		C3A3223A180A69C7009E53EE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A32239180A69C7009E53EE /* libsqlite3.dylib */; };
+		C3A32247180A6BFB009E53EE /* CnyCMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A32246180A6BFB009E53EE /* CnyCMethod.m */; };
+		C3BAD158180A742B0059E861 /* CnyDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BAD156180A742B0059E861 /* CnyDownloader.m */; };
+		C3BAD15C180A920A0059E861 /* CnyRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BAD15B180A920A0059E861 /* CnyRequester.m */; };
+		C3BAD15F180AAE5D0059E861 /* CnyTDloaderCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BAD15E180AAE5D0059E861 /* CnyTDloaderCtl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3A32232180A6829009E53EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3A3222E180A6829009E53EE /* Centny.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9897B3B15FEE2E900A30E15;
+			remoteInfo = Centny;
+		};
+		C3A32234180A683C009E53EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3A3222E180A6829009E53EE /* Centny.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E9897B3A15FEE2E900A30E15;
+			remoteInfo = Centny;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3A321E4180A66B9009E53EE /* TCny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A321E7180A66B9009E53EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3A321E9180A66B9009E53EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3A321EB180A66B9009E53EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3A321EF180A66B9009E53EE /* TCny-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TCny-Info.plist"; sourceTree = "<group>"; };
+		C3A321F1180A66B9009E53EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3A321F3180A66B9009E53EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3A321F5180A66B9009E53EE /* TCny-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TCny-Prefix.pch"; sourceTree = "<group>"; };
+		C3A321F6180A66B9009E53EE /* CnyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CnyAppDelegate.h; sourceTree = "<group>"; };
+		C3A321F7180A66B9009E53EE /* CnyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CnyAppDelegate.m; sourceTree = "<group>"; };
+		C3A321FA180A66B9009E53EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3A321FC180A66B9009E53EE /* CnyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CnyViewController.h; sourceTree = "<group>"; };
+		C3A321FD180A66B9009E53EE /* CnyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CnyViewController.m; sourceTree = "<group>"; };
+		C3A321FF180A66B9009E53EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3A32206180A66B9009E53EE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3A3222E180A6829009E53EE /* Centny.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Centny.xcodeproj; sourceTree = "<group>"; };
+		C3A32237180A69BB009E53EE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C3A32239180A69C7009E53EE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C3A32245180A6BFB009E53EE /* CnyCMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CnyCMethod.h; path = Core/CnyCMethod.h; sourceTree = "<group>"; };
+		C3A32246180A6BFB009E53EE /* CnyCMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CnyCMethod.m; path = Core/CnyCMethod.m; sourceTree = "<group>"; };
+		C3A32248180A6D19009E53EE /* TCny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCny.h; sourceTree = "<group>"; };
+		C3BAD156180A742B0059E861 /* CnyDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CnyDownloader.m; path = Net/CnyDownloader.m; sourceTree = "<group>"; };
+		C3BAD157180A742B0059E861 /* CnyDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CnyDownloader.h; path = Net/CnyDownloader.h; sourceTree = "<group>"; };
+		C3BAD15A180A920A0059E861 /* CnyRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CnyRequester.h; path = Net/CnyRequester.h; sourceTree = "<group>"; };
+		C3BAD15B180A920A0059E861 /* CnyRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CnyRequester.m; path = Net/CnyRequester.m; sourceTree = "<group>"; };
+		C3BAD15D180AAE5D0059E861 /* CnyTDloaderCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CnyTDloaderCtl.h; path = Net/CnyTDloaderCtl.h; sourceTree = "<group>"; };
+		C3BAD15E180AAE5D0059E861 /* CnyTDloaderCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CnyTDloaderCtl.m; path = Net/CnyTDloaderCtl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3A321E1180A66B9009E53EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A3223A180A69C7009E53EE /* libsqlite3.dylib in Frameworks */,
+				C3A32238180A69BC009E53EE /* libc++.dylib in Frameworks */,
+				C3A32236180A6843009E53EE /* libCentny.a in Frameworks */,
+				C3A321EA180A66B9009E53EE /* CoreGraphics.framework in Frameworks */,
+				C3A321EC180A66B9009E53EE /* UIKit.framework in Frameworks */,
+				C3A321E8180A66B9009E53EE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3A321DB180A66B9009E53EE = {
+			isa = PBXGroup;
+			children = (
+				C3A3222E180A6829009E53EE /* Centny.xcodeproj */,
+				C3A321ED180A66B9009E53EE /* TCny */,
+				C3A321E6180A66B9009E53EE /* Frameworks */,
+				C3A321E5180A66B9009E53EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3A321E5180A66B9009E53EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3A321E4180A66B9009E53EE /* TCny.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3A321E6180A66B9009E53EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A32239180A69C7009E53EE /* libsqlite3.dylib */,
+				C3A32237180A69BB009E53EE /* libc++.dylib */,
+				C3A321E7180A66B9009E53EE /* Foundation.framework */,
+				C3A321E9180A66B9009E53EE /* CoreGraphics.framework */,
+				C3A321EB180A66B9009E53EE /* UIKit.framework */,
+				C3A32206180A66B9009E53EE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3A321ED180A66B9009E53EE /* TCny */ = {
+			isa = PBXGroup;
+			children = (
+				C3A32249180A6E39009E53EE /* Net */,
+				C3A32244180A6BB5009E53EE /* Core */,
+				C3A32248180A6D19009E53EE /* TCny.h */,
+				C3A321F6180A66B9009E53EE /* CnyAppDelegate.h */,
+				C3A321F7180A66B9009E53EE /* CnyAppDelegate.m */,
+				C3A321F9180A66B9009E53EE /* Main.storyboard */,
+				C3A321FC180A66B9009E53EE /* CnyViewController.h */,
+				C3A321FD180A66B9009E53EE /* CnyViewController.m */,
+				C3A321FF180A66B9009E53EE /* Images.xcassets */,
+				C3A321EE180A66B9009E53EE /* Supporting Files */,
+			);
+			path = TCny;
+			sourceTree = "<group>";
+		};
+		C3A321EE180A66B9009E53EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3A321EF180A66B9009E53EE /* TCny-Info.plist */,
+				C3A321F0180A66B9009E53EE /* InfoPlist.strings */,
+				C3A321F3180A66B9009E53EE /* main.m */,
+				C3A321F5180A66B9009E53EE /* TCny-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3A3222F180A6829009E53EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3A32233180A6829009E53EE /* libCentny.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3A32244180A6BB5009E53EE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C3A32245180A6BFB009E53EE /* CnyCMethod.h */,
+				C3A32246180A6BFB009E53EE /* CnyCMethod.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C3A32249180A6E39009E53EE /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				C3BAD157180A742B0059E861 /* CnyDownloader.h */,
+				C3BAD156180A742B0059E861 /* CnyDownloader.m */,
+				C3BAD15A180A920A0059E861 /* CnyRequester.h */,
+				C3BAD15B180A920A0059E861 /* CnyRequester.m */,
+				C3BAD15D180AAE5D0059E861 /* CnyTDloaderCtl.h */,
+				C3BAD15E180AAE5D0059E861 /* CnyTDloaderCtl.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3A321E3180A66B9009E53EE /* TCny */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3A32216180A66B9009E53EE /* Build configuration list for PBXNativeTarget "TCny" */;
+			buildPhases = (
+				C3A321E0180A66B9009E53EE /* Sources */,
+				C3A321E1180A66B9009E53EE /* Frameworks */,
+				C3A321E2180A66B9009E53EE /* Resources */,
+				C3BAD159180A78B30059E861 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3A32235180A683C009E53EE /* PBXTargetDependency */,
+			);
+			name = TCny;
+			productName = TCny;
+			productReference = C3A321E4180A66B9009E53EE /* TCny.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3A321DC180A66B9009E53EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Cny;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Scorpion;
+			};
+			buildConfigurationList = C3A321DF180A66B9009E53EE /* Build configuration list for PBXProject "TCny" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3A321DB180A66B9009E53EE;
+			productRefGroup = C3A321E5180A66B9009E53EE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3A3222F180A6829009E53EE /* Products */;
+					ProjectRef = C3A3222E180A6829009E53EE /* Centny.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C3A321E3180A66B9009E53EE /* TCny */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3A32233180A6829009E53EE /* libCentny.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCentny.a;
+			remoteRef = C3A32232180A6829009E53EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3A321E2180A66B9009E53EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A32200180A66B9009E53EE /* Images.xcassets in Resources */,
+				C3A321F2180A66B9009E53EE /* InfoPlist.strings in Resources */,
+				C3A321FB180A66B9009E53EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C3BAD159180A78B30059E861 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3A321E0180A66B9009E53EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A321F4180A66B9009E53EE /* main.m in Sources */,
+				C3BAD15F180AAE5D0059E861 /* CnyTDloaderCtl.m in Sources */,
+				C3A32247180A6BFB009E53EE /* CnyCMethod.m in Sources */,
+				C3BAD158180A742B0059E861 /* CnyDownloader.m in Sources */,
+				C3BAD15C180A920A0059E861 /* CnyRequester.m in Sources */,
+				C3A321F8180A66B9009E53EE /* CnyAppDelegate.m in Sources */,
+				C3A321FE180A66B9009E53EE /* CnyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3A32235180A683C009E53EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Centny;
+			targetProxy = C3A32234180A683C009E53EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3A321F0180A66B9009E53EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3A321F1180A66B9009E53EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3A321F9180A66B9009E53EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3A321FA180A66B9009E53EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3A32214180A66B9009E53EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C3A32215180A66B9009E53EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3A32217180A66B9009E53EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TCny/TCny-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/Centny",
+				);
+				INFOPLIST_FILE = "TCny/TCny-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3A32218180A66B9009E53EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TCny/TCny-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/Centny",
+				);
+				INFOPLIST_FILE = "TCny/TCny-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3A321DF180A66B9009E53EE /* Build configuration list for PBXProject "TCny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3A32214180A66B9009E53EE /* Debug */,
+				C3A32215180A66B9009E53EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3A32216180A66B9009E53EE /* Build configuration list for PBXNativeTarget "TCny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3A32217180A66B9009E53EE /* Debug */,
+				C3A32218180A66B9009E53EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3A321DC180A66B9009E53EE /* Project object */;
+}

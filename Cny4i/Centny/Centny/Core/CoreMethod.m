@@ -21,22 +21,22 @@ void NSUseRelLog(bool use)
 
 void NSDLog(NSString *format, ...)
 {
-//	if (__useDebugLog) {
-//		va_list args = NULL;
-//		va_start(args, format);
-//		NSLogv(format, args);
-//		va_end(args);
-//	}
+	if (__useDebugLog) {
+		va_list args;
+		va_start(args, format);
+		NSLogv([NSString stringWithFormat:@"D %@",format], args);
+		va_end(args);
+	}
 }
 
 void NSRelLog(NSString *format, ...)
 {
-//	if (__useRelLog) {
-//		va_list args = NULL;
-//		va_start(args, format);
-//		NSLogv(format, args);
-//		va_end(args);
-//	}
+	if (__useRelLog) {
+		va_list args;
+		va_start(args, format);
+		NSLogv([NSString stringWithFormat:@"R %@",format], args);
+		va_end(args);
+	}
 }
 
 NSString *DocumentDirectory()

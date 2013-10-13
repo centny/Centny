@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 // define some core method for log.
-void NSUseDLog(bool use);
+FOUNDATION_EXPORT void NSUseDLog(bool use);
 
-void NSUseRelLog(bool use);
+FOUNDATION_EXPORT void NSUseRelLog(bool use);
 
-void NSDLog(NSString *format, ...);
+FOUNDATION_EXPORT void NSDLog(NSString *format, ...);
 
-void NSRelLog(NSString *format, ...);
+FOUNDATION_EXPORT void NSRelLog(NSString *format, ...);
 
-NSString *DocumentDirectory();
+FOUNDATION_EXPORT NSString *DocumentDirectory();
