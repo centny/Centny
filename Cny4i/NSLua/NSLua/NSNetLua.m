@@ -38,7 +38,7 @@ int lGetHttp(lua_State* l){
     }else{
         rurl=url;
     }
-    [[[URLRequester alloc]initGetURL:rurl completed:^(URLRequester *req, NSObject *msg) {
+    [URLRequester doGet:rurl completed:^(URLRequester *req, NSObject *msg) {
         lua_getglobal(l, [mback UTF8String]);
         if(msg){
             lua_pushnil(l);
@@ -50,7 +50,7 @@ int lGetHttp(lua_State* l){
             lua_pushstring(l, [cback UTF8String]);
         }
         lua_call(l, 3, 0);
-    }]start];
+    }];
     return 1;
 }
 @implementation NSNetLua
