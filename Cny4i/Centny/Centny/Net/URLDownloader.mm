@@ -116,13 +116,9 @@ using namespace std;
 	NSString *cl = [self.res_h objectForKey:@"Content-Length"];
 
 	if (cl && cl.length) {
-		self.clength = atol([cl UTF8String]);
+		self.clength = atol([cl UTF8String]) + self.tlength;
 	} else {
 		self.clength = 0;
-	}
-
-	if (self.clength && self.dldelegate && [self.dldelegate respondsToSelector:@selector(onDownloaderRate:trate:)]) {
-		[self.dldelegate onDownloaderRate:self trate:self.trate];
 	}
 }
 
@@ -136,12 +132,8 @@ using namespace std;
 
 	[self storeBuf];
 
-	if (self.dldelegate && [self.dldelegate respondsToSelector:@selector(onDownloaderReceive:received:total:)]) {
-		[self.dldelegate onDownloaderReceive:self received:self.tlength total:self.clength];
-	}
-
-	if (self.clength && self.dldelegate && [self.dldelegate respondsToSelector:@selector(onDownloaderRate:trate:)]) {
-		[self.dldelegate onDownloaderRate:self trate:self.trate];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(onDownloaderReceive:received:total:)]) {
+		[self.delegate onDownloaderReceive:self received:self.tlength total:self.clength];
 	}
 }
 

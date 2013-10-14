@@ -30,6 +30,7 @@
 		_res_d			= [NSMutableData data];
 		_args			= [NSMutableDictionary dictionary];
 		_req_h			= [NSMutableDictionary dictionary];
+		_res_h			= [NSMutableDictionary dictionary];
 	}
 
 	return self;

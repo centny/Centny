@@ -21,7 +21,7 @@ typedef void (^ URLReqSetRequest)(URLRequester *req, NSMutableURLRequest *reques
  *    @author Centny
  */
 @protocol URLRequesterDelegate <NSObject>
-
+@optional
 /**
  *    call back when request end.
  *    @param req the requester instance.

@@ -11,10 +11,9 @@
 #define DEFAULT_DL_BSIZE 4096
 @class URLDownloader;
 //
-@protocol URLDownloaderDelegate <NSObject>
+@protocol URLDownloaderDelegate <URLRequesterDelegate>
 @optional
 - (void)onDownloaderReceive:(URLDownloader *)downloader received:(long)r total:(long)t;
-- (void)onDownloaderRate:(URLDownloader *)downloader trate:(float)tr;
 @end
 //
 @interface URLDownloader : URLRequester
@@ -26,7 +25,7 @@
 @property(nonatomic) long				tlength;	// transftered length.
 @property(nonatomic) long				bsize;		// the block size.
 // @property(nonatomic, readonly) NSOutputStream			*output;
-@property(nonatomic, assign) id <URLDownloaderDelegate> dldelegate;
+@property(nonatomic, assign) id <URLDownloaderDelegate> delegate;
 //
 - (void)down;
 //

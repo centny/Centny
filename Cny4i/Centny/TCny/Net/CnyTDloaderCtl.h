@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CnyTDloaderCtl : UIViewController<NSURLConnectionDownloadDelegate>
+@interface CnyTDloaderCtl : UIViewController<URLDownloaderDelegate>
 -(IBAction)clkStart:(id)sender;
 -(IBAction)clkStop:(id)sender;
 @end

@@ -16,29 +16,40 @@
 
 - (IBAction)clkStart:(id)sender
 {
-//    [[NSFileManager defaultManager]removeItemAtPath:@"/tmp/t.mp3" error:nil];
-	self.dloader = [URLDownloader downProceedWith:@"http://down.51voa.com/201310/cat-scared-copycat-fat-cat-cat-nap.mp3" spath:@"/tmp/t.mp3" completed:^(URLRequester *req, NSObject *msg) {}];
-    [self.dloader down];
-//    NSURL				*URL		= [NSURL URLWithString:[@"http://cny.dnsd.me/wdav/Tmp/1.ape" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//	NSMutableURLRequest *request	= [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:15];
-//    
-//	[request setHTTPMethod:@"GET"];
-//    [[NSURLConnection connectionWithRequest:request delegate:self]start];
+	//    [[NSFileManager defaultManager]removeItemAtPath:@"/tmp/t.mp3" error:nil];
+	self.dloader			= [URLDownloader downProceedWith:@"http://down.51voa.com/201310/cat-scared-copycat-fat-cat-cat-nap.mp3" spath:@"/tmp/t.mp3" completed:^(URLRequester *req, NSObject *msg) {}];
+	self.dloader.delegate	= self;
+	[self.dloader down];
+	//    NSURL				*URL		= [NSURL URLWithString:[@"http://cny.dnsd.me/wdav/Tmp/1.ape" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	//	NSMutableURLRequest *request	= [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:15];
+	//
+	//	[request setHTTPMethod:@"GET"];
+	//    [[NSURLConnection connectionWithRequest:request delegate:self]start];
 }
 
 - (IBAction)clkStop:(id)sender
 {
 	[self.dloader cancel];
 }
-- (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long) expectedTotalBytes{
-//    NSLog(@"........");
+
+- (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long)expectedTotalBytes
+{
+	//    NSLog(@"........");
 }
-- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *) destinationURL{
-    NSLog(@"%@",destinationURL);
-    NSError* err;
-    [[NSFileManager defaultManager]moveItemAtURL:destinationURL toURL:[NSURL URLWithString:@"file:///tmp/t.apkk"] error:&err];
-    NSLog(@"%@",err);
+
+- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL
+{
+	NSLog(@"%@", destinationURL);
+	NSError *err;
+	[[NSFileManager defaultManager]moveItemAtURL:destinationURL toURL:[NSURL URLWithString:@"file:///tmp/t.apkk"] error:&err];
+	NSLog(@"%@", err);
 }
+
+- (void)onDownloaderReceive:(URLDownloader *)downloader received:(long)r total:(long)t
+{
+	NSDLog(@"Rate:%.2f,%ld", downloader.trate,t);
+}
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
