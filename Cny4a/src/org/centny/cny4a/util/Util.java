@@ -7,6 +7,15 @@ import java.util.Enumeration;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Bitmap.Config;
+import android.graphics.PorterDuff.Mode;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
@@ -78,4 +87,57 @@ public class Util {
 				+ "." + ((i >> 24) & 0xFF);
 	}
 
+	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
+
+		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+				bitmap.getHeight(), Config.ARGB_8888);
+		Canvas canvas = new Canvas(output);
+
+		final int color = 0xff424242;
+		final Paint paint = new Paint();
+		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+		final RectF rectF = new RectF(rect);
+		final float roundPx = pixels;
+
+		paint.setAntiAlias(true);
+		canvas.drawARGB(0, 0, 0, 0);
+		paint.setColor(color);
+		canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+		canvas.drawBitmap(bitmap, rect, rect, paint);
+
+		return output;
+	}
+
+	public static Bitmap zoomBitmap(Bitmap bitmap, int width, int height) {
+		if (bitmap == null) {
+			return null;
+		}
+
+		int w = bitmap.getWidth();
+		int h = bitmap.getHeight();
+		Matrix matrix = new Matrix();
+		float scaleWidth = ((float) width / w);
+		float scaleHeight = ((float) height / h);
+		matrix.postScale(scaleWidth, scaleHeight);
+		Bitmap newbmp = Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
+		return newbmp;
+	}
+
+	/**
+	 * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+	 */
+	public static int dip2px(Context context, float dpValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dpValue * scale + 0.5f);
+	}
+
+	/**
+	 * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+	 */
+	public static int px2dip(Context context, float pxValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (pxValue / scale + 0.5f);
+	}
 }
