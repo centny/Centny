@@ -24,6 +24,8 @@
 @property(nonatomic) long				clength;	// content length.
 @property(nonatomic) long				tlength;	// transftered length.
 @property(nonatomic) long				bsize;		// the block size.
+@property(nonatomic, readonly) float	speed;		// download speed.
+@property(nonatomic, readonly) NSString *sptext;	// download speed.
 // @property(nonatomic, readonly) NSOutputStream			*output;
 @property(nonatomic, assign) id <URLDownloaderDelegate> delegate;
 //

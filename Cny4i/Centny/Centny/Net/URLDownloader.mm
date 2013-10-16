@@ -17,11 +17,10 @@
 using namespace std;
 //
 @interface URLDownloader ()
-// @property(nonatomic) fstream *outs;
 @property(nonatomic) NSOutputStream *outs;
-// @property(nonatomic) fstream		*tmps;
-@property(nonatomic) NSMutableData *buf;
-// @property(nonatomic) char			*cbuf;
+@property(nonatomic) NSMutableData	*buf;
+@property(nonatomic) NSDate			*begin;
+@property(nonatomic) long			tfed;
 @end
 @implementation URLDownloader
 + (id)downWith:(NSString *)url spath:(NSString *)spath completed:(URLReqCompleted)finished
@@ -57,6 +56,7 @@ using namespace std;
 		self.buf		= [NSMutableData data];
 		self.bsize		= DEFAULT_DL_BSIZE;
 		self.clength	= self.tlength = 0;
+		self.tfed		= 0;
 		_proceed		= YES;
 	}
 
@@ -77,7 +77,31 @@ using namespace std;
 	_tlength = tlength;
 
 	if (self.proceed) {
-		[[NSString stringWithFormat:@"%ld", tlength]writeToFile:self.tpath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+		NSMutableDictionary *rg = [NSMutableDictionary dictionary];
+		[rg setObject:[NSString stringWithFormat:@"%ld", tlength] forKey:@"RANGE"];
+		[rg setObject:self.url forKey:@"URL"];
+		[rg writeToFile:self.tpath atomically:YES];
+	}
+}
+
+- (float)speed
+{
+	if (self.begin == nil) {
+		return 0;
+	} else {
+		double time = [[NSDate date]timeIntervalSince1970] - [self.begin timeIntervalSince1970];
+		double kb = ((double)self.tfed) / 1024;
+		return kb / time;
+	}
+}
+
+- (NSString *)sptext
+{
+	float sp = self.speed;
+	if (sp >= 1000) {
+		return [NSString stringWithFormat:@"%.1fMB", sp / 1024];
+	} else {
+		return [NSString stringWithFormat:@"%dKB", (int)sp];
 	}
 }
 
@@ -125,6 +149,7 @@ using namespace std;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	[self.buf appendData:data];
+	self.tfed += data.length;
 
 	if (self.buf.length < self.bsize) {
 		return;
@@ -139,6 +164,8 @@ using namespace std;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+	self.tfed	= 0;
+	self.begin	= nil;
 	[self storeBuf];
 	[[NSFileManager defaultManager] removeItemAtPath:self.tpath error:nil];
 	[self delTStream];
@@ -149,6 +176,8 @@ using namespace std;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+	self.tfed	= 0;
+	self.begin	= nil;
 	[self freeStream];
 	[super connection:connection didFailWithError:error];
 	NSDLog(@"down file error to:%@", self.spath);
@@ -167,14 +196,25 @@ using namespace std;
 	_tlength = [self readTlenth];
 	[self addHeaderField:@"Range" value:[NSString stringWithFormat:@"bytes=%ld-", self.tlength]];
 	//
-	NSDLog(@"start down file(Range:%ld) to:%@", self.tlength, self.spath);
-
+	self.tfed	= 0;
+	self.begin	= [NSDate date];
 	[self start];
+	NSDLog(@"start down file(Range:%ld) to:%@", self.tlength, self.spath);
 }
 
 - (long)readTlenth
 {
-	NSString *ltext = [NSString stringWithContentsOfFile:self.tpath encoding:NSUTF8StringEncoding error:nil];
+	NSDictionary *rg = [NSDictionary dictionaryWithContentsOfFile:self.tpath];
+
+	if (rg == nil) {
+		return 0;
+	}
+
+	if (![self.url isEqualToString:[rg objectForKey:@"URL"]]) {
+		return 0;
+	}
+
+	NSString *ltext = [rg objectForKey:@"RANGE"];
 
 	if (ltext) {
 		return atol([ltext UTF8String]);

@@ -16,4 +16,9 @@ FOUNDATION_EXPORT void NSDLog(NSString *format, ...);
 
 FOUNDATION_EXPORT void NSRelLog(NSString *format, ...);
 
+FOUNDATION_EXPORT void NSWLog(NSString *format, ...);
+
+FOUNDATION_EXPORT void NSELog(NSString *format, ...);
+
 FOUNDATION_EXPORT NSString *DocumentDirectory();
+

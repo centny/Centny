@@ -47,7 +47,7 @@
 
 - (void)onDownloaderReceive:(URLDownloader *)downloader received:(long)r total:(long)t
 {
-	NSDLog(@"Rate:%.2f,%ld", downloader.trate,t);
+	NSDLog(@"Rate:%@,%.2f,%ld", downloader.sptext, downloader.trate, t);
 }
 
 - (void)viewDidLoad

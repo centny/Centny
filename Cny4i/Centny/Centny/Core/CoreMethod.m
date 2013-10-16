@@ -24,7 +24,7 @@ void NSDLog(NSString *format, ...)
 	if (__useDebugLog) {
 		va_list args;
 		va_start(args, format);
-		NSLogv([NSString stringWithFormat:@"D %@",format], args);
+		NSLogv([NSString stringWithFormat:@"D %@", format], args);
 		va_end(args);
 	}
 }
@@ -34,9 +34,27 @@ void NSRelLog(NSString *format, ...)
 	if (__useRelLog) {
 		va_list args;
 		va_start(args, format);
-		NSLogv([NSString stringWithFormat:@"R %@",format], args);
+		NSLogv([NSString stringWithFormat:@"R %@", format], args);
 		va_end(args);
 	}
+}
+
+void NSWLog(NSString *format, ...)
+{
+	va_list args;
+
+	va_start(args, format);
+	NSLogv([NSString stringWithFormat:@"W %@", format], args);
+	va_end(args);
+}
+
+void NSELog(NSString *format, ...)
+{
+	va_list args;
+
+	va_start(args, format);
+	NSLogv([NSString stringWithFormat:@"E %@", format], args);
+	va_end(args);
 }
 
 NSString *DocumentDirectory()
@@ -46,3 +64,4 @@ NSString *DocumentDirectory()
 
 	return documentsDirectory;
 }
+
