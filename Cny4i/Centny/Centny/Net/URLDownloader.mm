@@ -99,9 +99,9 @@ using namespace std;
 {
 	float sp = self.speed;
 	if (sp >= 1000) {
-		return [NSString stringWithFormat:@"%.1fMB", sp / 1024];
+		return [NSString stringWithFormat:@"%.1fMB/s", sp / 1024];
 	} else {
-		return [NSString stringWithFormat:@"%dKB", (int)sp];
+		return [NSString stringWithFormat:@"%dKB/s", (int)sp];
 	}
 }
 
