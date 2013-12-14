@@ -19,7 +19,9 @@ func rtimes(c chan int, times int) {
 }
 
 func main() {
-
+	for i := 0; i < 1000; i++ {
+		time.Sleep(1000)
+	}
 	runtime.GOMAXPROCS(4)
 	tcode.ShowChinese()
 	const C_SIZE int = 3

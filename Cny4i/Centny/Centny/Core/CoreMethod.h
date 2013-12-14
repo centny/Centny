@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 // define some core method for log.
+
 FOUNDATION_EXPORT void NSUseDLog(bool use);
 
 FOUNDATION_EXPORT void NSUseRelLog(bool use);
@@ -21,4 +22,7 @@ FOUNDATION_EXPORT void NSWLog(NSString *format, ...);
 FOUNDATION_EXPORT void NSELog(NSString *format, ...);
 
 FOUNDATION_EXPORT NSString *DocumentDirectory();
+
+
+typedef void (^ CommonEvent)(id sender,id data, id msg);
 

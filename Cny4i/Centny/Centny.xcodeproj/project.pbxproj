@@ -432,7 +432,7 @@
 		E9897B3215FEE2E900A30E15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Centny;
 			};
 			buildConfigurationList = E9897B3515FEE2E900A30E15 /* Build configuration list for PBXProject "Centny" */;
@@ -548,6 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -573,12 +574,6 @@
 		E9897B4A15FEE2E900A30E15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					arm64,
-					armv7,
-					armv7s,
-					i386,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -594,12 +589,6 @@
 		E9897B4B15FEE2E900A30E15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					arm64,
-					armv7,
-					armv7s,
-					i386,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Centny.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
