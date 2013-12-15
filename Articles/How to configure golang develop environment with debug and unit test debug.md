@@ -237,7 +237,7 @@ if you aleady installed,skipping this step.
 tar -zxvf gdb-*.tar.gz
 cd gdb-*
 export GOC_FOR_TARGET=<go compiler path,like:/usr/local/go>
-./configure --prefix=/usr
+./configure --prefix=/usr --disable-werror
 make -j8
 sudo make install
 	```
