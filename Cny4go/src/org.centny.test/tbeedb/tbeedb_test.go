@@ -23,7 +23,7 @@ var orm beedb.Model
 var err error
 
 func init() {
-	beedb.OnDebug = false
+http: //mouapp.com/download/Mou.zip.OnDebug = false
 	// fmt.Println("the initialtion function...")
 	db, err = sql.Open("mysql", "cny:123@unix(/tmp/mysql.sock)/cny")
 	orm = beedb.New(db)

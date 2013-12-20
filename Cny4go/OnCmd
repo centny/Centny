@@ -1,0 +1,7 @@
+#!/bin/bash
+export GOPATH=~/.go
+echo GOPATH:$GOPATH
+go install github.com/Centny/Cny4go/log
+go install github.com/Centny/Cny4go/smartio
+go install github.com/Centny/Cny4go/util
+echo "..... install end ......"
