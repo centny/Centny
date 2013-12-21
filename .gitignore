@@ -9,3 +9,9 @@ bin
 xcuserdata
 
 Cny4go/src/github.com/Centny/Cny4go
+
+*.out
+
+*.json
+
+Cny4go/coverage.xml
