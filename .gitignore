@@ -15,3 +15,5 @@ Cny4go/src/github.com/Centny/Cny4go
 *.json
 
 Cny4go/coverage.xml
+
+Cny4go/coverage.html
