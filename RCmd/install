@@ -14,6 +14,6 @@ fi
 if [ ! -d "/var/log/rcmd" ];then
   mkdir /var/log/rcmd
 fi
-chkconfig --add rcmds
-chkconfig rcmds on
+chkconfig --add rcmdd
+chkconfig rcmdd on
  
