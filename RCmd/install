@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+if [ ! -d "out" ];then
+  mkdir out
+fi
+go build -o out/rcmds RCmdServer/src/org.cny.rcmds/main/main.go
+go build -o out/rcmd  RCmd/src/org.cny.rcmd/main/main.go
+cp out/rcmd /bin/
+cp out/rcmds /bin/
+cp rcmdd /etc/init.d/
+if [ ! -d "/var/lib/rcmd" ];then
+  mkdir /var/lib/rcmd
+fi
+if [ ! -d "/var/log/rcmd" ];then
+  mkdir /var/log/rcmd
+fi
+chkconfig --add rcmds
+chkconfig rcmds on
+ 

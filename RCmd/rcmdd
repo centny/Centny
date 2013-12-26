@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# rcmdd        Startup script for log server.
+#
+# chkconfig: 2345 12 88
+### BEGIN INIT INFO
+# Provides: $syslog
+# Required-Start: $local_fs
+# Required-Stop: $local_fs
+# Default-Start:  2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start or Stop the log server.
+### END INIT INFO
+
+# Source function library.
+. /etc/init.d/functions
+
+RETVAL=0
+WORK_D=/var/lib/rcmd
+PIDFILE=/var/run/rcmd.pid
+lockfile=/var/lock/rcmd.lock
+exec=/bin/rcmds
+start() {
+	[ -x $exec ] || exit 5
+
+	umask 077
+
+        echo -n $"Starting RCMD server: "
+        daemonize -o /var/log/rcmd/out.log -e /var/log/rcmd/err.log -c $WORK_D -p $PIDFILE -u root -l $lockfile $exec
+        RETVAL=$?
+	echo
+        [ $RETVAL -eq 0 ] && touch $lockfile
+	return $RETVAL
+}
+stop() {
+        echo -n $"Shutting down log server: "
+        killproc -p "$PIDFILE" $exec
+        RETVAL=$?
+        echo
+        [ $RETVAL -eq 0 ] && rm -f $lockfile
+        return $RETVAL
+}
+restart() {
+        stop
+        start
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+esac
+
+exit $?
