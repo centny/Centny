@@ -4,4 +4,5 @@ echo GOPATH:$GOPATH
 go install github.com/Centny/Cny4go/log
 go install github.com/Centny/Cny4go/smartio
 go install github.com/Centny/Cny4go/util
+go install github.com/Centny/Cny4go/server
 echo "..... install end ......"

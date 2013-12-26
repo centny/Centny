@@ -10,7 +10,7 @@
 	],
 	"settings":
 	{
-		"name": "Cny4go",
+		"name": "TServer",
 		"sublimegdb_commandline": "/usr/local/bin/gdb --interpreter=mi --args ${binp} ${args}",
 		"sublimegdb_go_project": true,
 		"sublimegdb_workingdir": "${ppath}"

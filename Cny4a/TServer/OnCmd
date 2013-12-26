@@ -1,0 +1,5 @@
+#!/bin/bash
+export GOPATH=~/.go
+echo GOPATH:$GOPATH
+go install org.cny.cny4a.ts/tdl
+echo "..... install end ......"

@@ -3,19 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <org.centny.cny4a.view.FocusImages
+    <org.cny.cny4a.view.FocusImages
         android:id="@+id/fimg"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-    </org.centny.cny4a.view.FocusImages>
+    </org.cny.cny4a.view.FocusImages>
 
-    <org.centny.cny4a.view.CustomIndicator
+    <org.cny.cny4a.view.CustomIndicator
         android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp" >
-    </org.centny.cny4a.view.CustomIndicator>
+    </org.cny.cny4a.view.CustomIndicator>
 
 </RelativeLayout>
