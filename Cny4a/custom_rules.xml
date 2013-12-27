@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules" default="stop_ts">
+	<target name="start_ts">
+		<exec executable="/bin/bash" dir="./TServer" failonerror="true">
+			<arg value="-xe" />
+			<arg value="build" />
+		</exec>
+		<exec executable="/bin/bash" dir="./TServer" failonerror="true">
+			<arg value="-xe" />
+			<arg value="run_srv" />
+			<arg value="start" />
+		</exec>
+	</target>
+	<target name="stop_ts">
+		<exec executable="/bin/bash" dir="./TServer" failonerror="false">
+			<arg value="-xe" />
+			<arg value="run_srv" />
+			<arg value="stop" />
+		</exec>
+	</target>
+</project>
