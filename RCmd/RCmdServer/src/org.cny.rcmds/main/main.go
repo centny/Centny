@@ -34,6 +34,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	os.Chmod("/tmp/rcm.sock", os.ModePerm)
 	for {
 		ac, err := l.Accept()
 		if err != nil {
