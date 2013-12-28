@@ -1,0 +1,10 @@
+#!/bin/bash
+dr=$1
+if [ "$dr" = "" ];then
+ dr=eth0
+fi
+if [ "Darwin" = `uname` ];then
+ ifconfig $dr | grep 'inet ' | awk '{print $2}'
+else
+ ifconfig $dr | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'
+fi
