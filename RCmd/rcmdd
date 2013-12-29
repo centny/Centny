@@ -26,7 +26,7 @@ start() {
 	umask 077
 
         echo -n $"Starting RCMD server: "
-        daemonize -o /var/log/rcmd/out.log -e /var/log/rcmd/err.log -c $WORK_D -p $PIDFILE -u root -l $lockfile $exec
+        daemonize -o /var/log/rcmd/out.log -e /var/log/rcmd/err.log -c $WORK_D -p $PIDFILE -u root -l $lockfile $exec $WORK_D
         RETVAL=$?
 	echo
         [ $RETVAL -eq 0 ] && touch $lockfile
