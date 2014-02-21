@@ -30,5 +30,4 @@ func main() {
 	for i := 0; i < C_SIZE; i++ {
 		<-chs[i]
 	}
-	sdfs
 }

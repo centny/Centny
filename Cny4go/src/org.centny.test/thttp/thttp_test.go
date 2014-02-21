@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"regexp"
 	"testing"
 )
 
@@ -32,4 +33,35 @@ func handleDownload(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("ABC", "这是中文")
 	fmt.Println("transfter file ...")
 	io.Copy(w, f)
+}
+
+type RegexpHandler struct {
+}
+
+func (h *RegexpHandler) Handler(pattern *regexp.Regexp, handler http.Handler) {
+}
+
+func (h *RegexpHandler) HandleFunc(pattern *regexp.Regexp, handler func(http.ResponseWriter, *http.Request)) {
+}
+
+func (h *RegexpHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("...........")
+	// no pattern matched; send 404 response
+	http.NotFound(w, r)
+}
+func TestServer(t *testing.T) {
+	mux := http.NewServeMux()
+	// mux.Handle("/api/", apiHandler{})
+	mux.HandleFunc("/path/aa", func(w http.ResponseWriter, req *http.Request) {
+		// The "/" pattern matches everything, so we need to check
+		// that we're at the root here.
+		// if req.URL.Path != "/" {
+		// 	http.NotFound(w, req)
+		// 	return
+		// }
+		fmt.Println("running ....")
+		fmt.Fprintf(w, "Welcome to the home page!")
+	})
+	http.Handle("/path/", mux)
+	http.ListenAndServe(":8080", nil)
 }

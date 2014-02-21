@@ -22,7 +22,6 @@ for p in $pkgs;
 do
  echo $p
 done
-exit 1
 gocov test\
  github.com/Centny/Cny4go/smartio\
  github.com/Centny/Cny4go/log\

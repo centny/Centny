@@ -5,4 +5,9 @@ go install github.com/Centny/Cny4go/log
 go install github.com/Centny/Cny4go/smartio
 go install github.com/Centny/Cny4go/util
 go install github.com/Centny/Cny4go/server
+go install github.com/Centny/Cny4go/test
+go install github.com/Centny/Cny4go/dbutil
+go install github.com/Centny/Cny4go/srvmux
+
+
 echo "..... install end ......"
