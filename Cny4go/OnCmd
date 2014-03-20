@@ -7,7 +7,8 @@ go install github.com/Centny/Cny4go/util
 go install github.com/Centny/Cny4go/server
 go install github.com/Centny/Cny4go/test
 go install github.com/Centny/Cny4go/dbutil
-go install github.com/Centny/Cny4go/srvmux
-
+go install github.com/Centny/Cny4go/routing
+go install github.com/Centny/Cny4go/routing/cookie
+go install github.com/Centny/Cny4go/routing/session
 
 echo "..... install end ......"
