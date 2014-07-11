@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="poi-3.10-FINAL-20140208" level="project" />
+    <orderEntry type="library" name="junit-4.8.2" level="project" />
+    <orderEntry type="library" name="xmlbeans-2.3.0" level="project" />
+    <orderEntry type="library" name="dom4j-1.6.1" level="project" />
+  </component>
+</module>
+
