@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Uer</title>
+		<script type="text/javascript" src="../../C4js.js"></script>
+		<script type="text/javascript" src="../org.cny.upload.js"></script>
+	</head>
+	<body>
+		<input id="i_a" multiple="" name="f1" type="file" />
+		<input id="i_f" accept="application/msword" multiple="" name="f2" type="file" />
+		<script type="text/javascript">
+			ue = new C4js.Uer();
+			ue.Url="http://127.0.0.1:9900/Fsrv/api/uload";
+			ue.Args={
+				ab:11111,
+				pub:1,
+				token:"ae2b1fca515949e5d54fb22b8ed95575-c57be2e6-7add-46b1-8032-01d0027093a9"
+			};
+			ue.OnProgress=function(f, rate, e){
+				console.log(f,rate,e)
+			}
+			ue.OnPrepare = function(f, xhr, form) {
+
+				return {aa:"kkkkkk"}
+			}
+			ue.Auto=true;
+			ue.AddI("i_a");
+			ue.AddI("i_f");
+		</script>
+	</body>
+</html>
