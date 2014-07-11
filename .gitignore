@@ -38,3 +38,5 @@ JUtil/lib
 JUtil/out
 
 TestNode.js/src/node/node_modules
+
+JUtil/.idea/workspace.xml
