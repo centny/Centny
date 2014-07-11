@@ -3,6 +3,7 @@ package treflect
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"reflect"
 	"testing"
 )
@@ -33,4 +34,9 @@ func TestReflect(t *testing.T) {
 
 func hmethod(w http.ResponseWriter, r *http.Request) {
 
+}
+
+func TestRfM(t *testing.T) {
+	fmt.Println(os.Args)
+	fmt.Println(os.Getwd())
 }

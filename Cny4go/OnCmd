@@ -7,8 +7,11 @@ go install github.com/Centny/Cny4go/util
 go install github.com/Centny/Cny4go/server
 go install github.com/Centny/Cny4go/test
 go install github.com/Centny/Cny4go/dbutil
+go install github.com/Centny/Cny4go/igtest
 go install github.com/Centny/Cny4go/routing
 go install github.com/Centny/Cny4go/routing/cookie
-go install github.com/Centny/Cny4go/routing/session
+go install github.com/Centny/Cny4go/routing/filter
+go install github.com/Centny/Cny4go/routing/httptest
+go install github.com/Centny/Cny4go/mrepo
 
 echo "..... install end ......"
