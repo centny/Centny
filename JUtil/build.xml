@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JTF" basedir="." default="main">
+    <property environment="env"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="out.dir" value="out"/>
+    <property name="classes.dir" value="${out.dir}/classes"/>
+    <property name="src.dir" value="src"/>
+    <property name="lib.jutil.ver" value="0.1.0"/>
+    <property name="author" value="cny"/>
+    <path id="app.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    <target name="clear">
+        <delete dir="${out.dir}"/>
+        <mkdir dir="${out.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+    </target>
+    <!-- 编译 -->
+    <target name="compile" depends="clear">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" debug="no"
+               deprecation="true" encoding="utf-8">
+            <compilerarg value="-Xlint:unchecked"/>
+            <classpath refid="app.classpath"/>
+        </javac>
+        <copy overwrite="true" todir="${classes.dir}">
+            <fileset dir="${src.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <!-- 开始打包 -->
+    <!-- 公共模块打包 -->
+    <target name="jutil.jar" depends="compile">
+        <mkdir dir="${out.dir}/jutil"/>
+        <!--copy the file to the tmp dire -->
+        <copy overwrite="true" todir="${out.dir}/jutil">
+            <fileset dir="${classes.dir}">
+                <include name="**/jutil/**/*"/>
+                <exclude name="**/*Test*.class"/>
+            </fileset>
+            <fileset dir="${src.dir}">
+                <include name="**/jutil/**/*"/>
+                <exclude name="**/*Test*.java"/>
+            </fileset>
+        </copy>
+        <jar destfile="${out.dir}/jutil-${author}-${lib.jutil.ver}.jar"
+             basedir="${out.dir}/jutil">
+        </jar>
+    </target>
+
+    <!-- 工程起点 -->
+    <target name="main" depends="jutil.jar">
+        <echo message="****************************************"/>
+        <echo message="*** This is the end of project build ***"/>
+        <echo message="****************************************"/>
+    </target>
+</project>
