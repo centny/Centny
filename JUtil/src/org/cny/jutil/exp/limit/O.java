@@ -15,7 +15,6 @@ public class O implements ILimit {
     @Override
     public void valid(Exp exp, Object v) throws Exception {
         if (!this.os.contains(v)) {
-            System.out.println(v.getClass());
             throw exp.error(String.format("value(%s) is not in (%s)", v, this.os));
         }
     }
