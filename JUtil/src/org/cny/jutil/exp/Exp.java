@@ -7,17 +7,38 @@ import org.cny.jutil.exp.limit.P;
 import org.cny.jutil.exp.limit.R;
 
 /**
+ * the express compiler.
+ *
  * @author Centny.
  */
 public class Exp {
+    /**
+     * the required type.<br/>
+     * R:required.<br/>
+     * O:option.<br/>
+     */
     public enum ReqType {
-        R, O
+        R,
+        O
     }
 
+    /**
+     * the value type.<br/>
+     * I: long type value.<br/>
+     * F: double type value.<br/>
+     * S: string type value.<br/>
+     */
     public enum ValType {
         I, F, S
     }
 
+    /**
+     * the limit type.<br/>
+     * L: range limit.<br/>
+     * P: pattern regex limit.<br/>
+     * R: range limit.<br/>
+     * O: option limit.<br/>
+     */
     public enum LType {
         L, P, R, O
     }
@@ -31,6 +52,13 @@ public class Exp {
     private Exp() {
     }
 
+    /**
+     * compile express to Exp instance.<br/>
+     * see document file in  help package.
+     *
+     * @param exp the express.
+     * @return Exp instance.
+     */
     public static Exp compile(String exp) {
         Ast.yes(exp, "the express is null or empty");
         String[] es = exp.split(",", 3);
@@ -42,6 +70,14 @@ public class Exp {
         }
     }
 
+    /**
+     * compile express to Exp instance by requite and type express/limit express/message.
+     *
+     * @param rt    requite and type express.
+     * @param limit limit express.
+     * @param msg   message.
+     * @return Exp instance.
+     */
     public static Exp compile(String rt, String limit, String msg) {
         Ast.yes(rt, "require and value type express is null or empty");
         String[] rst = rt.split("\\|", 2);
@@ -74,6 +110,13 @@ public class Exp {
         return exp;
     }
 
+    /**
+     * check value whether valid or not.
+     *
+     * @param v target value.
+     * @return valid value.
+     * @throws Exception throw exception when check fail.
+     */
     public Object valid(Object v) throws Exception {
         if (v == null) {
             if (this.rtype.equals(ReqType.R)) {
@@ -140,6 +183,12 @@ public class Exp {
         return msg;
     }
 
+    /**
+     * create exception by message.
+     *
+     * @param msg target message.
+     * @return Excpetion.
+     */
     public RuntimeException error(String msg) {
         return new RuntimeException(this.msg, new RuntimeException(msg));
     }

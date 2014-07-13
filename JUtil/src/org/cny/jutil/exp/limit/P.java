@@ -7,10 +7,14 @@ import org.cny.jutil.exp.ILimit;
 import java.util.regex.Pattern;
 
 /**
+ * pattern limit for string.
+ *
  * @author Centny. 7/11/14.
  */
 public class P implements ILimit {
+    //the regex.
     private Pattern reg;
+    //the regex string.
     private String regex;
 
     @Override
@@ -22,8 +26,13 @@ public class P implements ILimit {
         }
     }
 
-    public P(String o) {
-        this.regex = o;
-        this.reg = Pattern.compile(o);
+    /**
+     * default constructor by regex express.
+     *
+     * @param regex regex express.
+     */
+    public P(String regex) {
+        this.regex = regex;
+        this.reg = Pattern.compile(regex);
     }
 }

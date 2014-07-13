@@ -5,10 +5,14 @@ import org.cny.jutil.exp.Exp;
 import org.cny.jutil.exp.ILimit;
 
 /**
+ * range limit for string or number.
+ *
  * @author Centny. 7/11/14.
  */
 public class R implements ILimit {
+    //the begin value.
     private double beg = 0;
+    //the end value.
     private double end = Double.MAX_VALUE;
 
     @Override
@@ -28,9 +32,14 @@ public class R implements ILimit {
         }
     }
 
-    public R(String o) {
-        Ast.yes(o.length(), "range limit is empty or null");
-        String[] os = o.split("\\~", 2);
+    /**
+     * default constructor by range limit express.
+     *
+     * @param r the range limit express.
+     */
+    public R(String r) {
+        Ast.yes(r.length(), "range limit is empty or null");
+        String[] os = r.split("\\~", 2);
         switch (os.length) {
             case 1:
                 this.end = Double.parseDouble(os[0]);

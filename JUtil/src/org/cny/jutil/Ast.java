@@ -6,21 +6,49 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
+ * class for Assert value.
+ *
  * @author Centny. 7/11/14.
  */
 public class Ast {
+    /**
+     * assert true to value,throw the error when assert fail.
+     *
+     * @param t      target value.
+     * @param format string format.
+     * @param args   format arguments.
+     * @throws AssertFailException assert fail exception.
+     */
     public static void yes(Object t, String format, Object... args) throws AssertFailException {
         if (!yes(t)) {
             throw new AssertFailException(String.format(format, args));
         }
     }
 
+    /**
+     * assert false to value,throw the error when assert fail.
+     *
+     * @param t      target value.
+     * @param format string format.
+     * @param args   format arguments.
+     * @throws AssertFailException assert fail exception.
+     */
     public static void no(Object t, String format, Object... args) throws AssertFailException {
         if (yes(t)) {
             throw new AssertFailException(String.format(format, args));
         }
     }
 
+    /**
+     * check value if true.<br/>
+     * if object is boolean, return directory.<br/>
+     * if object is number/short/byte,check greater zero.<br/>
+     * if object is string,check is empty or null.<br/>
+     * if object is collection/map,check size.
+     *
+     * @param t target value.
+     * @return true/false.
+     */
     public static boolean yes(Object t) {
         if (t == null) {
             return false;

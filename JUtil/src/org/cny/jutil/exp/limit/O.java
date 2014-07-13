@@ -7,9 +7,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by cny on 7/11/14.
+ * option limit for string or number.
+ *
+ * @author Centny. 7/11/14.
  */
 public class O implements ILimit {
+    //the option set.
     private Set<Object> os = new HashSet<Object>();
 
     @Override
@@ -19,6 +22,12 @@ public class O implements ILimit {
         }
     }
 
+    /**
+     * default constructor by option limit express and value type.
+     *
+     * @param o     the option limit express.
+     * @param vtype the value type.
+     */
     public O(String o, Exp.ValType vtype) {
         String[] oset = o.split("\\~");
         switch (vtype) {

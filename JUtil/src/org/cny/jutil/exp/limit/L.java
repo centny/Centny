@@ -1,10 +1,17 @@
 package org.cny.jutil.exp.limit;
 
 /**
- * Created by cny on 7/11/14.
+ * range limit for string or number.
+ *
+ * @author Centny. 7/11/14.
  */
 public class L extends R {
-    public L(String o) {
-        super(o);
+    /**
+     * default constructor by range limit express.
+     *
+     * @param l limit express.
+     */
+    public L(String l) {
+        super(l);
     }
 }
