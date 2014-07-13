@@ -13,14 +13,15 @@ public class ExpTest {
     public void testExp() throws Exception {
         Exp exp;
         //
-        exp = Exp.compile("R|I,L:3,integer");
-        exp.valid(1);
+        exp = Exp.compile("R|I,L:3");
+        System.out.println(exp.valid(1).getClass());
         this.valid(exp, 4);
         this.valid(exp, 4);
         exp.valid(1F);
         this.valid(exp, 4F);
         this.valid(exp, 5F);
         exp.valid("1");
+        System.out.println(exp.valid("1").getClass());
         this.valid(exp, "4");
         this.valid(exp, "5");
         //
@@ -115,6 +116,12 @@ public class ExpTest {
         exp = Exp.compile("O|S", "P:^a.*c$", "integer");
         exp.valid(null);
         this.valid(exp, "ad");
+        //
+        exp = Exp.compile("O|I", "R:0~", "integer");
+        exp.valid(1);
+        //
+        exp = Exp.compile("O|I", "R:~10", "integer");
+        exp.valid(1);
         //
         exp.getL();
         exp.getLimit();

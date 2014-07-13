@@ -101,18 +101,18 @@ public class Exp {
     private Object valid_i(Object v) {
         if (v instanceof Number) {
             Number num = (Number) v;
-            return num.intValue();
+            return num.longValue();
         } else {
-            return Integer.parseInt(v.toString());
+            return Long.parseLong(v.toString());
         }
     }
 
     private Object valid_f(Object v) {
         if (v instanceof Number) {
             Number num = (Number) v;
-            return num.floatValue();
+            return num.doubleValue();
         } else {
-            return Float.parseFloat(v.toString());
+            return Double.parseDouble(v.toString());
         }
     }
 

@@ -24,12 +24,12 @@ public class O implements ILimit {
         switch (vtype) {
             case I:
                 for (String ov : oset) {
-                    this.os.add(Integer.parseInt(ov));
+                    this.os.add(Long.parseLong(ov));
                 }
                 break;
             case F:
                 for (String ov : oset) {
-                    this.os.add(Float.parseFloat(ov));
+                    this.os.add(Double.parseDouble(ov));
                 }
                 break;
             case S:

@@ -36,8 +36,12 @@ public class R implements ILimit {
                 this.end = Double.parseDouble(os[0]);
                 break;
             default:
-                this.beg = Double.parseDouble(os[0]);
-                this.end = Double.parseDouble(os[1]);
+                if (!os[0].isEmpty()) {
+                    this.beg = Double.parseDouble(os[0]);
+                }
+                if (!os[1].isEmpty()) {
+                    this.end = Double.parseDouble(os[1]);
+                }
                 break;
         }
     }
