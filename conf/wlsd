@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+# wlsd        Startup script for Weglogic.
+#
+# chkconfig: 2345 12 88
+### BEGIN INIT INFO
+# Provides: $syslog
+# Required-Start: $local_fs
+# Required-Stop: $local_fs
+# Default-Start:  2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start or Stop the Weblogic.
+### END INIT INFO
+
+# Source function library.
+. /etc/init.d/functions
+export JAVA_HOME=/usr/java/jdk1.7.0_45
+export MW_HOME=/srv/wls/wls12120
+export MW_DOMAIN_HOME=/home/wls/sls
+#export JAVA_OPTIONS=-Xms1024m -Xmsx256m
+export MEM_ARGS="-Xms512m -Xmx4096m -XX:MaxPermSize=1024m"
+PATH=/usr/sbin:$PATH; export PATH
+
+start() {
+        echo "Starting Weglogic server: "
+	date +"%Y-%m-%d %T: Starting Weblogic as part of system up. ---->" >> /var/log/wls.log
+
+	$MW_DOMAIN_HOME/bin/startWebLogic.sh  &	
+	 
+	touch /var/lock/subsys/wlsd
+}
+stop() {
+        echo "Stopping Weglogic server: "
+	date +"%Y-%m-%d %T: Stopping Weglogic as part of system shutdown. ---->" >> /var/log/wls.log
+	
+	$MW_DOMAIN_HOME/bin/stopWebLogic.sh
+	
+	rm -f /var/lock/subsys/wlsd	
+}
+restart() {
+        stop
+        start
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+esac
+
+exit $?
+
