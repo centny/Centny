@@ -130,6 +130,17 @@ public class ExpTest {
         exp.getVtype();
     }
 
+    @Test
+    public void testRegex() {
+        Exp.compile("O|S", "P:(^0\\d{2&3}(\\-)?\\d{7&8})$|^(1(([35][0-9])|(47)|[8][01236789]))\\d{8}", "integer");
+    }
+
+//    @Test
+//    public void testExp2() throws Exception {
+//        Exp exp = Exp.compile("R|S,P:^[0-9]*$,abbb");
+//        exp.valid("　");
+//    }
+
     private void valid(Exp exp, Object v) {
         try {
             exp.valid(v);

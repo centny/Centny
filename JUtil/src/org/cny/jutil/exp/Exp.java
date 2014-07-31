@@ -118,7 +118,7 @@ public class Exp {
      * @throws Exception throw exception when check fail.
      */
     public Object valid(Object v) throws Exception {
-        if (v == null) {
+        if (!Ast.yes(v)) {
             if (this.rtype.equals(ReqType.R)) {
                 throw this.error("value is null or empty");
             } else {

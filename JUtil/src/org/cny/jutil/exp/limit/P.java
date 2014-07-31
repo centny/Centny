@@ -33,6 +33,7 @@ public class P implements ILimit {
      */
     public P(String regex) {
         this.regex = regex;
-        this.reg = Pattern.compile(regex);
+        this.regex = this.regex.replaceAll("\\&", ",");
+        this.reg = Pattern.compile(this.regex);
     }
 }
